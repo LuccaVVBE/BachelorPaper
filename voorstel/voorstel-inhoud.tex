@@ -2,14 +2,26 @@
 
 \section{Introductie}%
 \label{sec:introductie}
-Deze bachelorproef onderzoekt de mogelijke voordelen en uitdagingen in het migreren van een bestaande PHP-webapplicatie naar het ASP.NET framework. Davo Group NV heeft een bestaande web applicatie gebouwd in PHP, maar stellen zich de vraag of een migratie naar ASP.NET een effectievere server-side oplossing zou zijn. De doelgroep van deze bachelorproef zijn de ontwikkelaars binnen Davo Group NV die verantwoordelijk zijn voor de evolutie van de bestaande PHP-webapplicatie.
+\subsection{Microservices in de bedrijfswereld}
+Microservices groeien de laatste jaren in populariteit in de bedrijfswereld. Organisaties gebruiken deze architectuur meer en meer voor het ontwikkelen en beheren van moderne applicaties. Ze brengen aanzienlijke verbeteringen mee zoals flexibiliteit, onderhoudbaarheid en flexibiliteit in vergelijking met de traditionele manier van ontwikkeling.
 
-Het thema gaat concreet over de keuze van server-side frameworks, waarbij er gefocust wordt op het verschil tussen PHP en ASP.NET. Het probleem is namelijk dat er een optimaal server-side framework gevonden moet worden om de huidige PHP-applicatie mogelijks te vervangen. We richten ons specifiek op de technische en prestatiegerelateerde aspecten om de impact op performantie, security en ontwikkeltijd in kaart te brengen. 
+Veel sectoren schakelen naar microservices om meer agile en schaalbare oplossingen te realiseren. Het laat toe om grote complexe applicaties op te bouwen als meerdere onafhankelijke services die afzonderlijk ontwikkeld, geïmplementeerd en geschaald kunnen worden. Dit maakt applicaties beter beheersbaar en sneller aanpasbaar aan veranderende vereisten.
 
-De vraag die heerst in deze bachelorproef is of een migratie van de PHP-webapplicatie naar ASP.NET een positieve impact zal hebben.
-De bedoeling is om 2 resultaten te verkrijgen. Het eerste resultaat is een grondige analyse van de technische aspecten van PHP en ASP.NET. Het andere resultaat is een aanbeveling of de migratie naar ASP.NET een effectievere oplossing is dan de huidige PHP-webapplicatie.
+\subsection{Casus: Davo Group NV}
+Gezien de groeiende populariteit van microservices, overweegt ook Davo Group NV om over te stappen naar een microservices-architectuur voor hun klantenportaal, onder andere door de voordelen die de architectuur met zich meebrengt. Het onderzoek dat uitgevoerd zal worden richt zich op de potentiële optimalisatie van de IT-infrastructuur bij Davo Group NV, maar kan ook gebruikt worden door bedrijven met een vergelijkbare probleemstelling. Het huidige klantenportaal bestaat uit meerdere functionaliteiten, zoals inloggen, aanvragen van producten \& services, opvolgen van dataverbruik, ...
 
+Door de implementatie van microservices kan het systeem modulair opgebouwd worden waardoor flexibiliteit verhoogd wordt en ontwikkeltijd verkort. Het biedt de mogelijkheid om afzonderlijk services te gaan schalen, zoals vermeld in het vorige sub-hoofdstuk.
 
+\subsection{Onderzoeksvraag en doelstellingen}
+De onderzoeksvraag van deze paper is hoe Davo Group NV de bestaande IT-infrastuctuur kan optimaliseren door naar een microservices-architectuur over te stappen, en welk platform is het meest geschikt volgens ontwikkelervaring, functionaliteit en schaalbaarheid.
+
+Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de onderzoeksvraag:
+\begin{list}
+    \item Analyse: Mogelijkheden en uitdagingen van microservices in kaart brengen
+    \item PoC: Enkele services uitgewerkt in 2 microservices-architecturen 
+    \item Aanbevelingen: Op basis van analyse en ondervindingen PoC mogelijkheden bespreken
+\end{list}
+    
 %
 %Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
 %
@@ -32,12 +44,7 @@ De bedoeling is om 2 resultaten te verkrijgen. Het eerste resultaat is een grond
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
-\subsection{Wat is php?}
-\subsubsection{Definitie}
-\subsubsection{Voor- en nadelen}
-\subsection{Wat is ASP.NET?}
-\subsubsection{Definitie}
-\subsubsection{Voor- en nadelen}
+
 
 
 %Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
