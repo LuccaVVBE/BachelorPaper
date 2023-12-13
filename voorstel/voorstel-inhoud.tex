@@ -16,11 +16,13 @@ Door de implementatie van microservices kan het systeem modulair opgebouwd worde
 De onderzoeksvraag van deze paper is hoe Davo Group NV de bestaande IT-infrastuctuur kan optimaliseren door naar een microservices-architectuur over te stappen, en welk platform is het meest geschikt volgens ontwikkelervaring, functionaliteit en schaalbaarheid.
 
 Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de onderzoeksvraag:
-\begin{list}
+
+\begin{itemize}
     \item Analyse: Mogelijkheden en uitdagingen van microservices in kaart brengen
-    \item PoC: Enkele services uitgewerkt in 2 microservices-architecturen 
+    \item POC: Enkele services uitgewerkt in 2 microservices-architecturen 
     \item Aanbevelingen: Op basis van analyse en ondervindingen PoC mogelijkheden bespreken
-\end{list}
+\end{itemize}
+
     
 %
 %Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
@@ -44,9 +46,14 @@ Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de on
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
+\subsection{Monolithische applicaties}
+Monolithische applicaties is de traditionele manier van softwareontwikkeling. Volgens \textcite{Dragoni2016} is een monolithische applicatie een applicatie waar alle modules samenhangen en niet afzonderlijk uitvoerbaar zijn. We zien dat bij mainstream ontwikkeltalen van server-side applicaties, zoals Java, C en Python er abstracties aanwezig zijn om de complexiteit op te splitsen in modules. Echter zal elke applicatie dat uitgewerkt is in een van deze talen bij compilatie van vanaf 1 executable, zijnde de monoliet, waardoor er enkel gebruik gemaakt wordt van resources op 1 systeem. De modules van de monolithische applicatie zijn dus afhankelijk van de gedeelde resources en niet onafhankelijk uitvoerbaar.
 
+%Extra info monolithische applicatie?
+\subsection{Microservice architectuur}
+Microservices is een nieuwe trend in de software architectuur waar grote, complexe applicaties verdeeld worden in kleinere services. \textcite{Dragoni2016} definieert een microservice architectuur als een gedistribueerde applicatie waar alle modules microservices zijn. Dit zijn samenhangende maar onafhankelijke processen dat met elkaar communiceren aan de hand van API calls. Ze worden apart gedeployed en krijgen hun eigen resources en database toegewezen. 
 
-
+\textcite{Blinowski2022} stelt dat de hoofdprincipes van een microservice architectuur bestaan uit: één verantwoordelijkheid per service, autonoom kunnen runnen en afgeschermd zijn achter een API. Dit laat toe, afhankelijk van het gebruik van de service, om beter resources te kunnen verdelen. Aangezien de services autonoom kunnen runnen moeten ze niet op hetzelfde systeem draaien en al zeker niet op het gemeenschappelijke proces zoals gebeurt op een monolithische applicatie\autocite{Dragoni2017}. Hierdoor is het mogelijk dat wanneer één service uitvalt, de applicatie grotendeels blijft werken afhankelijk van de impact ervan. Elke service is toegankelijk via een API die zo hun data kunnen doorgeven aan een andere service wanneer die deze nodig heeft. Dit is dan weer een uitdaging om bij elke API call genoeg informatie mee te geven wanneer verschillende services verschillende data nodig hebben.
 %Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 %
 %Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
@@ -58,8 +65,8 @@ Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de on
 %Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
+% \dfrac{\autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
+%   geen onderdeel is van de zin.}{_{}}
 % \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
