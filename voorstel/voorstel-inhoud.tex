@@ -13,14 +13,14 @@ Gezien de groeiende populariteit van microservices, overweegt ook Davo Group NV 
 Door de implementatie van microservices kan het systeem modulair opgebouwd worden waardoor de flexibiliteit verhoogd wordt en de ontwikkeltijd verkort. Het biedt de mogelijkheid om afzonderlijk services te gaan schalen, zoals vermeld in het vorige sub-hoofdstuk.
 
 \subsection{Onderzoeksvraag en doelstellingen}
-De onderzoeksvraag van deze paper is hoe Davo Group NV de bestaande IT-infrastuctuur kan optimaliseren door naar een microservices-\newline architectuur over te stappen, en welk platform is het meest geschikt volgens ontwikkel ervaring, functionaliteit en schaalbaarheid.
+De onderzoeksvraag van deze paper is welke verbetering in performantie ontstaat wanneer er gebruik gemaakt wordt van een microservice-architectuur ten opzichte van een monolithische applicatie. Performantie wordt hier als volgt gedefinieerd: gemiddeld netwerk responstijd, CPU-gebruik, RAM-gebruik en de capaciteit van requests binnen een bepaalde tijdsspanne. 
 
 Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de onderzoeksvraag:
 
 \begin{itemize}
-    \item Analyse: Mogelijkheden en uitdagingen van microservices in kaart brengen
-    \item POC: Enkele services uitgewerkt in 2\newline microservices-architecturen 
-    \item Aanbevelingen: Op basis van analyse en ondervindingen PoC mogelijkheden bespreken
+    \item Literatuurstudie: Gekende mogelijkheden en uitdagingen van monolithische; applicaties en  microservices in kaart brengen;
+    \item POC: Een applicatie uitgewerkt als monoliet en een als microservice;
+    \item Analyse: De ondervindingen bij de PoC analyseren en hiervan een resultaat vormen.
 \end{itemize}
 
     
@@ -55,8 +55,13 @@ Microservices is een nieuwe trend in de software architectuur waar grote, comple
 
 \textcite{Blinowski2022} stelt dat de hoofdprincipes van een microservice architectuur bestaan uit: één verantwoordelijkheid per service, autonoom kunnen runnen en afgeschermd zijn achter een API. Dit laat toe, afhankelijk van het gebruik van de service, om beter resources te kunnen verdelen. Aangezien de services autonoom kunnen runnen moeten ze niet op hetzelfde systeem draaien en al zeker niet op het gemeenschappelijke proces zoals gebeurt op een monolithische applicatie \autocite{Dragoni2017}. Hierdoor is het mogelijk dat wanneer één service uitvalt, de applicatie grotendeels blijft werken afhankelijk van de impact ervan. Elke service is toegankelijk via een API die zo hun data kunnen doorgeven aan een andere service wanneer die deze nodig heeft. Dit is dan weer een uitdaging om bij elke API call genoeg informatie mee te geven wanneer verschillende services verschillende data nodig hebben.
 
-\subsection{Container orchestration}
-Containers zijn een ideale manier om microservices in te runnen door hun lage overhead en snelle deployment mogelijkheden \autocite{Jawarneh2019}. Dit is ideaal wanneer er weinig services zijn omdat het beheer ervan vrij eenvoudig blijft. Eenmaal de applicatie groter wordt en meer microservices ingezet worden is het moeilijk om een overzicht te behouden en is het interessant om een extra laag toe te voegen in de architectuur, namelijk de container orchestration. Deze zorgt ervoor dat het beheren van elke container zijn resources automatisch kan verlopen, alsook regelt deze de coördinatie en communicatie tussen de containers en dus ook de microservices \autocite{Liu2020}. 
+\subsection{Performantie binnen softwareontwikkeling}
+Performantie is een breed concept. Het is onder andere de snelheid waarop een applicatie reageert op een bepaalde gebruikers input \autocite{Miskolczy2023} en is afhankelijk van verschillende factoren, zoals de complexiteit of het design van de applicatie, het netwerk, de infrastructuur, ... \autocite{Allen2024}. Het meten van performantie gebeurt aan de hand van monitoring. Dit gaat allerlei data verzamelen van de applicatie, waarvan onder andere het CPU- en geheugengebruik, aantal netwerkverzoeken per minuut, vertraging tussen gebruikersinteractie, gemiddelde tijd dat de server nodig heeft om te antwoorden, ... \autocite{Kanjilal2022}. 
+
+De verzamelde data heeft wel degelijk een betekenis. Bij een laag CPU- en geheugengebruik is de applicatie niet alleen meer performant, maar heeft ook een betere kost-efficiëntie. Het kan namelijk snel reageren op gebruikersinvoer, terwijl resources optimaal gebruikt worden.
+De capaciteit van aantal netwerkverzoeken per minuut is een goede indicator hoeveel gebruikers dezelfde applicatie/service kunnen gebruiken op hetzelfde moment. De vertraging tussen gebruikersinteractie en de gemiddelde tijd dat de server nodig heeft om te antwoorden gaan hand in hand. Vaak is er na interactie van een gebruiker data nodig van de server, en zal de vertraging die optreedt vaak de tijd zijn die nodig is om de server te bereiken om data op te halen. 
+
+
 %Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 %
 %Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
@@ -77,6 +82,7 @@ Containers zijn een ideale manier om microservices in te runnen door hun lage ov
 %Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
+%todo recheck nieuw onderwerp
 \section{Methodologie}%
 \label{sec:methodologie}
 \subsection{Literatuurstudie}
@@ -102,6 +108,7 @@ In de laatste stap wordt de literatuurstudie in combinatie met de ondervindingen
 %Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
+%todo check nieuw onderwerp
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 \subsection{Verwachte resultaten}
