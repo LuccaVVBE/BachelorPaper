@@ -2,25 +2,22 @@
 
 \section{Introductie}%
 \label{sec:introductie}
-\subsection{Microservices in de bedrijfswereld}
-Microservices groeien de laatste jaren in populariteit in de bedrijfswereld. Organisaties gebruiken deze architectuur meer en meer voor het ontwikkelen en beheren van moderne applicaties. Ze brengen aanzienlijke verbeteringen mee zoals flexibiliteit, onderhoudbaarheid en schaalbaarheid in vergelijking met de traditionele manier van ontwikkeling.
-
-Veel sectoren schakelen microservices in om meer agile en schaalbare oplossingen te realiseren. Het laat toe om grote complexe applicaties op te bouwen als meerdere onafhankelijke services die afzonderlijk ontwikkeld, geïmplementeerd en geschaald kunnen worden. Dit maakt applicaties beter beheersbaar en sneller aanpasbaar aan veranderende vereisten.
+\subsection{Energie-efficiëntie in software ontwikkeling}
+Momenteel staat de ICT-sector gekend als een grote elektriciteitsverbruiker. Volgens \textcite{Gelenbe2023} wordt ongeveer 10\% van de elektriciteit wereldwijd besteed aan informaticasystemen. Jaarlijks groeit dit percentage en is er nood aan een manier om deze groei in te krimpen of zelfs te stoppen. Daarom wordt energie-efficiënt werken steeds populairder in de software omgeving.  
 
 \subsection{Casus: Davo Group NV}
-Gezien de groeiende populariteit van microservices, overweegt ook Davo Group NV om over te stappen naar een microservices-architectuur voor hun klantenportaal, gedreven door de voordelen die de architectuur met zich meebrengt. Het onderzoek dat uitgevoerd zal worden richt zich op de potentiële optimalisatie van de IT-\newline infrastructuur bij Davo Group NV, maar kan ook gebruikt worden door bedrijven met een vergelijkbare probleemstelling. Het huidige klantenportaal bestaat uit meerdere functionaliteiten, zoals inloggen, aanvragen van producten \& services, opvolgen van dataverbruik, ...
+Omwille dat Davo Group NV een bedrijf is dat duurzaam te werk gaat, willen zij te weten komen hoe ze energie-efficiënt te werk kunnen gaan binnen hun applicatieontwikkeling. Daarvoor willen ze onderzoeken of een verandering van architectuur een invloed heeft op hun verbruik. Het onderzoek zal zich richten op het testen en vergelijken van ontwikkelarchitecturen, waarvan de monolithische architectuur er één van is, op basis van hun energie-efficiëntie, met oog houdend op performantie van de software. Dit is niet alleen interessant voor Davo Group NV, maar ook voor bedrijven die zich inzetten om duurzaam om te gaan in de ICT-wereld. Dit onderzoek kan zo een basis vormen voor de oplossing van een wereldwijd probleem.
 
-Door de implementatie van microservices kan het systeem modulair opgebouwd worden waardoor de flexibiliteit verhoogd wordt en de ontwikkeltijd verkort. Het biedt de mogelijkheid om afzonderlijk services te gaan schalen, zoals vermeld in het vorige sub-hoofdstuk.
 
 \subsection{Onderzoeksvraag en doelstellingen}
-De onderzoeksvraag van deze paper is welke verbetering in performantie ontstaat wanneer er gebruik gemaakt wordt van een microservice-architectuur ten opzichte van een monolithische applicatie. Performantie wordt hier als volgt gedefinieerd: gemiddeld netwerk responstijd, CPU-gebruik, RAM-gebruik en de capaciteit van requests binnen een bepaalde tijdsspanne. 
+De onderzoeksvraag van deze paper is hoe Davo Group NV energie-efficiënter kan worden op vlak van applicaties door gebruik te maken van een bepaald ontwikkelarchitectuur, en zo ja, welke.
 
 Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de onderzoeksvraag:
 
 \begin{itemize}
-    \item Literatuurstudie: Gekende mogelijkheden en uitdagingen van monolithische; applicaties en  microservices in kaart brengen;
-    \item POC: Een applicatie uitgewerkt als monoliet en een als microservice;
-    \item Analyse: De ondervindingen bij de PoC analyseren en hiervan een resultaat vormen.
+    \item Literatuurstudie: Gekende ontwikkelarchitecturen in kaart brengen;
+    \item POC: Een applicatie uitgewerkt in verschillende ontwikkelarchitecturen;
+    \item Resultatenanalyse: De resultaten van de PoC analyseren en hiervan een conclusie vormen.
 \end{itemize}
 
     
@@ -46,16 +43,29 @@ Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de on
 
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
-\subsection{Monolithische applicaties}
-Monolithische applicaties is de traditionele manier van softwareontwikkeling. Volgens \textcite{Dragoni2016} is een monolithische applicatie een applicatie waar alle modules samenhangen en niet afzonderlijk uitvoerbaar zijn. We zien dat bij mainstream ontwikkeltalen van server-side applicaties, zoals Java, C en Python er abstracties aanwezig zijn om de complexiteit op te splitsen in modules. Echter zal elke applicatie, dat uitgewerkt is in een van deze talen, gecompileerd worden vanaf 1 executable, zijnde de monoliet, waardoor er enkel gebruik gemaakt wordt van de resources op 1 systeem. De modules van de monolithische applicatie zijn dus afhankelijk van de gedeelde resources en niet onafhankelijk uitvoerbaar.
+\subsection{Ontwikkelarchitecturen}
+Ontwikkelarchitecturen zijn een manier om herhalende problemen binnen software development aan te pakken door gebruik te maken van een fundamentele structuur \autocite{Dhaduk2020}. Elk van die architecturen heeft zijn voor en nadelen waardoor het belangrijk is om deze goed te vergelijken of ze in aanmerking komen voor het project. Enkele voorbeelden van ontwikkelarchitecturen zijn: monolieten, gelaagde architectuur, microservices, event-driven architectuur, ...
 
-%Extra info monolithische applicatie?
-\subsection{Microservice architectuur}
-Microservices is een nieuwe trend in de software architectuur waar grote, complexe applicaties verdeeld worden in kleinere services. \textcite{Dragoni2016} definieert een microservice architectuur als een gedistribueerde applicatie waar alle modules microservices zijn. Dit zijn samenhangende maar onafhankelijke processen die met elkaar communiceren aan de hand van API calls. Ze worden apart gedeployed en krijgen hun eigen resources en database toegewezen. 
 
-\textcite{Blinowski2022} stelt dat de hoofdprincipes van een microservice architectuur bestaan uit: één verantwoordelijkheid per service, autonoom kunnen runnen en afgeschermd zijn achter een API. Dit laat toe, afhankelijk van het gebruik van de service, om beter resources te kunnen verdelen. Aangezien de services autonoom kunnen runnen moeten ze niet op hetzelfde systeem draaien en al zeker niet op het gemeenschappelijke proces zoals gebeurt op een monolithische applicatie \autocite{Dragoni2017}. Hierdoor is het mogelijk dat wanneer één service uitvalt, de applicatie grotendeels blijft werken afhankelijk van de impact ervan. Elke service is toegankelijk via een API die zo hun data kunnen doorgeven aan een andere service wanneer die deze nodig heeft. Dit is dan weer een uitdaging om bij elke API call genoeg informatie mee te geven wanneer verschillende services verschillende data nodig hebben.
+%Extra info ontwikkelarchitecturen
 
-\subsection{Performantie binnen softwareontwikkeling}
+\subsection{Impact software design op energie verbruik}
+%todo hoe software related is, zie DOI  10.1145/1235
+Energie verbruik (E) is de hoeveelheid stroom (P) dat je verbruikt over een bepaalde tijdsperiode (t), uitgedrukt als \(E = P * t\) met E in Joule, P in Watt en t in seconden. Volgens \autocite{GustavoPinto2017} moeten volgende voorwaarden voldaan zijn om het verbruik te meten van een software applicatie:
+\begin{itemize}
+    \item het moet actief zijn;
+    \item het moet draaien op een hardware platform;
+    \item een bepaald scenario neemt plaats;
+    \item het wordt uitgevoerd in een bepaalde tijdspanne.
+\end{itemize}
+
+Eerdere studies tonen aan dat de manier waarop software ontwikkelt wordt degelijk impact kan hebben op energie verbruik. Zo zou het gebruik van design patterns en bepaalde datastructuren, in sommige gevallen, leiden tot een besparing in verbruik \autocite{Georgiou2019}.
+
+\subsection{Meten van energie-efficiëntie}
+
+
+
+\subsection{Meten van performantie}
 Performantie is een breed concept. Het is onder andere de snelheid waarop een applicatie reageert op een bepaalde gebruikers input \autocite{Miskolczy2023} en is afhankelijk van verschillende factoren, zoals de complexiteit of het design van de applicatie, het netwerk, de infrastructuur, ... \autocite{Allen2024}. Het meten van performantie gebeurt aan de hand van monitoring. Dit gaat allerlei data verzamelen van de applicatie, waarvan onder andere het CPU- en geheugengebruik, aantal netwerkverzoeken per minuut, vertraging tussen gebruikersinteractie, gemiddelde tijd dat de server nodig heeft om te antwoorden, ... \autocite{Kanjilal2022}. 
 
 De verzamelde data heeft wel degelijk een betekenis. Bij een laag CPU- en geheugengebruik is de applicatie niet alleen meer performant, maar heeft ook een betere kost-efficiëntie. Het kan namelijk snel reageren op gebruikersinvoer, terwijl resources optimaal gebruikt worden.
@@ -86,15 +96,18 @@ De capaciteit van aantal netwerkverzoeken per minuut is een goede indicator hoev
 \section{Methodologie}%
 \label{sec:methodologie}
 \subsection{Literatuurstudie}
-Als eerste wordt er een uitgebreide literatuurstudie uitgevoerd om de mogelijkheden en uitdagingen in kaart te brengen van microservices. Ook wordt er meer informatie over best practices, concepten en containerorkestratie in de microservice-architectuur onderzocht. Om grondige analyse mogelijk te maken wordt deze fase gespreid over 2 weken, 14 dagen.
-\subsection{Requirement analyse en long list}
-De tweede stap is het uitvoeren van een requirement analyse. Er wordt overlegd met belanghebbenden binnen Davo Group NV welke functionele en niet-functionele vereisten er aanwezig moeten zijn en worden gerangschikt volgens het MoSCoW-principe. Op basis van deze informatie kan er overgegaan worden naar een volgende fase waar verschillende alternatieven, zoals Kubernetes\footnote{https://kubernetes.io/} en Docker Swarm\footnote{https://docs.docker.com/engine/swarm/}, opgelijst worden. Elk alternatief wordt dan aan de hand de van beschikbare informatie vergeleken met de requirements of deze al dan niet voldoen. Deze stap wordt uitgewerkt in een tijdspanne van 3 weken, 21 dagen.
-\subsection{Short list en PoC}
-Als deze lijst met alle mogelijke platformen is opgesteld, worden de 2 meest passende gekozen. Op beide platformen wordt een proof of concept opgesteld. Hiervoor wordt een vooraf gedefinieerd scenario uitgewerkt waar enkele services die ook aanwezig zijn op het klantenportaal van Davo Group NV worden nagebootst. 
+Als eerste wordt er een uitgebreide literatuurstudie uitgevoerd om de meest gekende software architecturen in kaart te brengen. Hiervan worden best practices, voor- en nadelen alsook performantie aspecten opgezocht. Om grondige analyse mogelijk te maken wordt deze fase gespreid over 3 weken, 21 dagen.
 
-Tijdens het uitwerken van de PoC worden de ondervindingen zoals flexibiliteit, ontwikkeltijd en schaalbaarheid in functie van de eerder opgestelde requirements gedocumenteerd. De volledige uitwerking van de short list en PoC duurt ongeveer 7 weken. Dit zou genoeg tijd moeten geven om de services te ontwikkelen en uit te rollen op de 2 gekozen microservice architecturen en deze te testen aan de hand van de opgestelde requirements.
+\subsection{Requirement analyse en long list}
+%todo pas aan
+De tweede stap is het uitvoeren van een requirement analyse. Er wordt overlegd met belanghebbenden binnen Davo Group NV welke functionele en niet-functionele vereisten er aanwezig moeten zijn en worden gerangschikt volgens het MoSCoW-principe. Op basis van deze informatie kan er overgegaan worden naar een volgende fase waar verschillende alternatieven, zoals Kubernetes\footnote{https://kubernetes.io/} en Docker Swarm\footnote{https://docs.docker.com/engine/swarm/}, opgelijst worden. Elk alternatief wordt dan aan de hand de van beschikbare informatie vergeleken met de requirements of deze al dan niet voldoen. Deze stap wordt uitgewerkt in een tijdspanne van 2 weken, 14 dagen.
+\subsection{Short list en PoC}
+Als deze lijst met alle mogelijke architecturen is opgesteld, worden er naast de huidige architectuur die Davo Group NV hanteert nog 2 architecturen gekozen. Dit kan aanschouwt worden als de short list. Als Proof of Concept wordt voor elke architectuur een vooraf gedefinieerd scenario uitgewerkt waar enkele services die ook aanwezig zijn op de huidige applicaties van Davo Group NV. 
+
+Tijdens het uitwerken van de PoC worden de ondervindingen zoals energieverbruik en performantie gedocumenteerd. De volledige uitwerking van de short list en PoC duurt ongeveer 7 weken. Dit zou genoeg tijd moeten geven om de services te ontwikkelen en uit te rollen op de 2 gekozen microservice architecturen en deze te testen aan de hand van de opgestelde requirements.
 \subsection{Vormen conclusie}
-In de laatste stap wordt de literatuurstudie in combinatie met de ondervindingen van de proof of concept geanalyseerd. Zo kan er een conclusie gevormd worden of er al dan niet overgeschakeld kan worden naar een microservice architectuur en welk platform er best gebruikt kan worden. Deze laatste stap neemt de resterende 2 weken in beslag, wat zeker toelaat om de theorie met de praktijk objectief te vergelijken.
+In de laatste stap wordt de informatie uit de literatuurstudie in combinatie met de resultaten van de Proof of Concept geanalyseerd. Zo kan er een conclusie gevormd worden of de keuze van software architectuur voor applicaties een impact heeft op energie-efficiëntie en welke hiervoor het meest optimaal is.
+
 %Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 %
 %Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
@@ -111,18 +124,20 @@ In de laatste stap wordt de literatuurstudie in combinatie met de ondervindingen
 %todo check nieuw onderwerp
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
-\subsection{Verwachte resultaten}
-De literatuurstudie zal een antwoord bieden op de mogelijkheden en uitdagingen van microservices. Het resultaat is een gedetailleerde analyse over best practices en container orkestratie, wat de basis is voor het verdere onderzoek.
+\subsection{Verwachte resultaat}
+De literatuurstudie zal leiden tot een duidelijk zicht op bestaande ontwikkelarchitecturen. Het bevat best practices, voor- en nadelen, performantie en indien mogelijk ook eerdere resultaten in verband met energie-efficiëntie.
 
+%todo pas aan:
 Bij de requirement analyse is er een overzicht van de functionele en niet-functionele requirements die Davo Group NV stelt voor het klantenportaal. Deze zullen de basis zijn van de long list, een lijst met meerdere opties die aan de requirements kunnen voldoen. 
 
-Op basis van die long list wordt er een proof of concept opgesteld aan de hand van een vooraf gedefinieerd scenario waarin enkele functionaliteiten van het klantenportaal nagebootst worden. De PoC wordt uitgewerkt op de twee meest geschikte microservice platformen. De resultaten die hieruit voortvloeien geven inzicht in de flexibiliteit, ontwikkeltijd en schaalbaarheid van het platform, rekening houdend met de vastgestelde requirements.
-\newline
-\newline
-\subsection{Conclusie}
-Aan de hand van deze resultaten kan een conclusie gevormd worden. Als de PoC succesvol is bij minstens één microservice platform, kan geconcludeerd worden dat een overstap naar zo een architectuur voor het klantenportaal haalbaar en waardevol is. 
+Eenmaal de selectie gemaakt is welke ontwikkelarchitecturen gebruikt zullen worden, wordt de proof of concept opgesteld aan de hand van een vooraf gedefinieerd scenario waarin enkele functionaliteiten van hun bestaande applicaties nagebootst worden. De resultaten die hieruit voortvloeien geven inzicht in de energie-efficiëntie van de architectuur.
 
-Zowel de literatuurstudie en de resultaten van de PoC worden samen geanalyseerd om te bepalen welk platform het meest geschikt is voor de behoeften van Davo Group NV. Uit deze analyse kan dan een aanbeveling gedaan worden voor het meest geschikte platform. Dit zal een waardevolle leidraad vormen voor Davo Group NV bij de beslissing over hun IT-infrastructuur en eventuele verdere stappen in het implementatieproces.
+Het verwachte resultaat is dat er een verschil zal zijn in energie-efficiëntie. Dit is gebaseerd op voorgaande onderzoeken die aantonen dat bij verschillende design patterns en datastructuren ook een verschil aanwezig is en dus logischerwijs hetzelfde zal voorvallen voor de architectuur van de software.
+
+\subsection{Conclusie}
+Aan de hand van deze resultaten kan een conclusie gevormd worden. De PoC zal de belangrijkste factor zijn om te beslissen of een keuze van software ontwikkelarchitectuur degelijk impact heeft op energie-efficiëntie, of dus duurzaamheid.
+
+Uit dit onderzoek kunnen we verwachten dat er een eerste beeld gevormd wordt rond energie-efficiëntie in relatie met software ontwikkelarchitecturen, maar het geeft ook aanstoot tot het onderzoeken van meerdere ontwikkelarchitecturen en het optimaliseren ervan met focus op de energie-efficiëntie.
 %Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
 %
 %Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
