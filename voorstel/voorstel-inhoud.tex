@@ -3,7 +3,7 @@
 \section{Introductie}%
 \label{sec:introductie}
 \subsection{Energie-efficiëntie in software ontwikkeling}
-Momenteel staat de ICT-sector gekend als een grote elektriciteitsverbruiker. Volgens \textcite{Gelenbe2023} wordt ongeveer 10\% van de elektriciteit wereldwijd besteed aan informaticasystemen. Jaarlijks groeit dit percentage en is er nood aan een manier om deze groei in te krimpen of zelfs te stoppen. Daarom wordt energie-efficiënt werken steeds populairder in de software omgeving.  
+Momenteel staat de ICT-sector gekend als een grote elektriciteitsverbruiker. Volgens \textcite{Gelenbe2023} wordt ongeveer 10\% van de elektriciteit wereldwijd besteed aan informaticasystemen. Jaarlijks groeit dit percentage en is er nood aan een manier om deze groei in te krimpen of zelfs te stoppen. Daarom wordt energie-efficiënt werken steeds meer noodzakelijk in de software omgeving.  
 
 \subsection{Casus: Davo Group NV}
 Omwille dat Davo Group NV een bedrijf is dat duurzaam te werk gaat, willen zij te weten komen hoe ze energie-efficiënt te werk kunnen gaan binnen hun applicatieontwikkeling. Daarvoor willen ze onderzoeken of een verandering van architectuur een invloed heeft op hun verbruik. Het onderzoek zal zich richten op het testen en vergelijken van ontwikkelarchitecturen, waarvan de monolithische architectuur er één van is, op basis van hun energie-efficiëntie, met oog houdend op performantie van de software. Dit is niet alleen interessant voor Davo Group NV, maar ook voor bedrijven die zich inzetten om duurzaam om te gaan in de ICT-wereld. Dit onderzoek kan zo een basis vormen voor de oplossing van een wereldwijd probleem.
@@ -47,11 +47,11 @@ Volgende doelstellingen dragen bij om een concreet antwoord te voorzien op de on
 Ontwikkelarchitecturen zijn een manier om herhalende problemen binnen software development aan te pakken door gebruik te maken van een fundamentele structuur \autocite{Dhaduk2020}. Elk van die architecturen heeft zijn voor en nadelen waardoor het belangrijk is om deze goed te vergelijken of ze in aanmerking komen voor het project. Enkele voorbeelden van ontwikkelarchitecturen zijn: monolieten, gelaagde architectuur, microservices, event-driven architectuur, ...
 
 
-%Extra info ontwikkelarchitecturen
+%todo Extra info ontwikkelarchitecturen
 
 \subsection{Impact software design op energie verbruik}
 %todo hoe software related is, zie DOI  10.1145/1235
-Energie verbruik (E) is de hoeveelheid stroom (P) dat je verbruikt over een bepaalde tijdsperiode (t), uitgedrukt als \(E = P * t\) met E in Joule, P in Watt en t in seconden. Volgens \autocite{GustavoPinto2017} moeten volgende voorwaarden voldaan zijn om het verbruik te meten van een software applicatie:
+Energie verbruik (E) is de hoeveelheid stroom (P) dat je verbruikt over een bepaalde tijdsperiode (t), uitgedrukt als \(E = P * t\) met E in Joule, P in Watt en t in seconden. Volgens \textcite{GustavoPinto2017} moeten volgende voorwaarden voldaan zijn om het verbruik te meten van een software applicatie:
 \begin{itemize}
     \item het moet actief zijn;
     \item het moet draaien op een hardware platform;
@@ -59,17 +59,17 @@ Energie verbruik (E) is de hoeveelheid stroom (P) dat je verbruikt over een bepa
     \item het wordt uitgevoerd in een bepaalde tijdspanne.
 \end{itemize}
 
-Eerdere studies tonen aan dat de manier waarop software ontwikkelt wordt degelijk impact kan hebben op energie verbruik. Zo zou het gebruik van design patterns en bepaalde datastructuren, in sommige gevallen, leiden tot een besparing in verbruik \autocite{Georgiou2019}.
-
-\subsection{Meten van energie-efficiëntie}
+Resources zoals CPU, RAM, netwerk, ... verbruiken allemaal stroom en dragen dus bij aan het energie verbruik. Eerdere studies tonen echter aan dat de manier waarop software ontwikkelt wordt het gebruik van die resources kan beïnvloeden. Zo zou het implementeren van design patterns en bepaalde datastructuren, in sommige gevallen, leiden tot een besparing in verbruik van energie \autocite{Georgiou2019}.
 
 
-
-\subsection{Meten van performantie}
+\subsection{Performantie}
 Performantie is een breed concept. Het is onder andere de snelheid waarop een applicatie reageert op een bepaalde gebruikers input \autocite{Miskolczy2023} en is afhankelijk van verschillende factoren, zoals de complexiteit of het design van de applicatie, het netwerk, de infrastructuur, ... \autocite{Allen2024}. Het meten van performantie gebeurt aan de hand van monitoring. Dit gaat allerlei data verzamelen van de applicatie, waarvan onder andere het CPU- en geheugengebruik, aantal netwerkverzoeken per minuut, vertraging tussen gebruikersinteractie, gemiddelde tijd dat de server nodig heeft om te antwoorden, ... \autocite{Kanjilal2022}. 
 
 De verzamelde data heeft wel degelijk een betekenis. Bij een laag CPU- en geheugengebruik is de applicatie niet alleen meer performant, maar heeft ook een betere kost-efficiëntie. Het kan namelijk snel reageren op gebruikersinvoer, terwijl resources optimaal gebruikt worden.
 De capaciteit van aantal netwerkverzoeken per minuut is een goede indicator hoeveel gebruikers dezelfde applicatie/service kunnen gebruiken op hetzelfde moment. De vertraging tussen gebruikersinteractie en de gemiddelde tijd dat de server nodig heeft om te antwoorden gaan hand in hand. Vaak is er na interactie van een gebruiker data nodig van de server, en zal de vertraging die optreedt vaak de tijd zijn die nodig is om de server te bereiken om data op te halen. 
+
+\subsection{Energie-efficiëntie}
+Energie-efficiëntie ligt nauw samen met performantie. De resources worden op eenzelfde manier gemonitord, echter wordt andere data verzameld. Het gaat hier niet om in welke mate de resource gebruikt wordt, maar eerder hoeveel energie ze verbruiken \autocite{Kor2015}. Het meten van energie-efficiëntie is niet een eenmalige taak, maar gebeurt best meerdere keren over een bepaald scenario. Zo kan er een beter beeld gevormd worden over het effectieve energie verbruik van een applicatie.
 
 
 %Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
@@ -96,17 +96,17 @@ De capaciteit van aantal netwerkverzoeken per minuut is een goede indicator hoev
 \section{Methodologie}%
 \label{sec:methodologie}
 \subsection{Literatuurstudie}
-Als eerste wordt er een uitgebreide literatuurstudie uitgevoerd om de meest gekende software architecturen in kaart te brengen. Hiervan worden best practices, voor- en nadelen alsook performantie aspecten opgezocht. Om grondige analyse mogelijk te maken wordt deze fase gespreid over 3 weken, 21 dagen.
+Als eerste wordt er een uitgebreide literatuurstudie uitgevoerd om de meest gekende software architecturen in kaart te brengen. Hiervan worden best practices, voor- en nadelen alsook performantie aspecten opgezocht. Ook worden tools gezocht om energie-efficiëntie bij software te meten. Om grondige literatuurstudie mogelijk te maken wordt deze fase gespreid over 3 weken, 21 dagen.
 
 \subsection{Requirement analyse en long list}
 %todo pas aan
-De tweede stap is het uitvoeren van een requirement analyse. Er wordt overlegd met belanghebbenden binnen Davo Group NV welke functionele en niet-functionele vereisten er aanwezig moeten zijn en worden gerangschikt volgens het MoSCoW-principe. Op basis van deze informatie kan er overgegaan worden naar een volgende fase waar verschillende alternatieven, zoals Kubernetes\footnote{https://kubernetes.io/} en Docker Swarm\footnote{https://docs.docker.com/engine/swarm/}, opgelijst worden. Elk alternatief wordt dan aan de hand de van beschikbare informatie vergeleken met de requirements of deze al dan niet voldoen. Deze stap wordt uitgewerkt in een tijdspanne van 2 weken, 14 dagen.
+De tweede stap is het uitvoeren van een requirement analyse. Er wordt overlegd met belanghebbenden binnen Davo Group NV welke technische vereisten er aanwezig moeten zijn, zoals programmeertaal voor de PoC, welke tools er gebruikt moeten worden, .... De volgende fase richt zich op het vergelijken van monitoring tools. Elke mogelijkheid wordt dan aan de hand van de beschikbare informatie uit de literatuurstudie vergeleken met de requirements of deze al dan niet de nodige data kunnen capteren. Deze stap wordt uitgewerkt in een tijdspanne van 2 weken, 14 dagen.
 \subsection{Short list en PoC}
-Als deze lijst met alle mogelijke architecturen is opgesteld, worden er naast de huidige architectuur die Davo Group NV hanteert nog 2 architecturen gekozen. Dit kan aanschouwt worden als de short list. Als Proof of Concept wordt voor elke architectuur een vooraf gedefinieerd scenario uitgewerkt waar enkele services die ook aanwezig zijn op de huidige applicaties van Davo Group NV. 
+Als deze lijst met alle mogelijke architecturen is opgesteld, worden er, naast de huidige architectuur die Davo Group NV hanteert voor hun applicaties, nog 2 architecturen gekozen alsook  1 monitoring tool. Dit kan aanschouwt worden als de short list. Als proof of concept wordt voor elke architectuur een vooraf gedefinieerd scenario uitgewerkt waar enkele services die ook aanwezig zijn op de huidige applicaties van Davo Group NV. 
 
 Tijdens het uitwerken van de PoC worden de ondervindingen zoals energieverbruik en performantie gedocumenteerd. De volledige uitwerking van de short list en PoC duurt ongeveer 7 weken. Dit zou genoeg tijd moeten geven om de services te ontwikkelen en uit te rollen op de 2 gekozen microservice architecturen en deze te testen aan de hand van de opgestelde requirements.
 \subsection{Vormen conclusie}
-In de laatste stap wordt de informatie uit de literatuurstudie in combinatie met de resultaten van de Proof of Concept geanalyseerd. Zo kan er een conclusie gevormd worden of de keuze van software architectuur voor applicaties een impact heeft op energie-efficiëntie en welke hiervoor het meest optimaal is.
+In de laatste stap wordt de informatie uit de literatuurstudie in combinatie met de resultaten van de proof of concept geanalyseerd. Zo kan er een conclusie gevormd worden of de keuze van software architectuur voor applicaties een impact heeft op energie-efficiëntie en welke hiervoor het meest optimaal is.
 
 %Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
 %
@@ -121,14 +121,15 @@ In de laatste stap wordt de informatie uit de literatuurstudie in combinatie met
 %Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
 
 %---------- Verwachte resultaten ----------------------------------------------
-%todo check nieuw onderwerp
+
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 \subsection{Verwachte resultaat}
 De literatuurstudie zal leiden tot een duidelijk zicht op bestaande ontwikkelarchitecturen. Het bevat best practices, voor- en nadelen, performantie en indien mogelijk ook eerdere resultaten in verband met energie-efficiëntie.
 
-%todo pas aan:
-Bij de requirement analyse is er een overzicht van de functionele en niet-functionele requirements die Davo Group NV stelt voor het klantenportaal. Deze zullen de basis zijn van de long list, een lijst met meerdere opties die aan de requirements kunnen voldoen. 
+
+Bij de requirement analyse is er een overzicht van de technische vereisten die Davo Group NV stelt. Deze zijn de basis voor een lijst van monitoringtools die gebruikt kunnen worden tijdens de uitvoering van de PoC.
+
 
 Eenmaal de selectie gemaakt is welke ontwikkelarchitecturen gebruikt zullen worden, wordt de proof of concept opgesteld aan de hand van een vooraf gedefinieerd scenario waarin enkele functionaliteiten van hun bestaande applicaties nagebootst worden. De resultaten die hieruit voortvloeien geven inzicht in de energie-efficiëntie van de architectuur.
 
