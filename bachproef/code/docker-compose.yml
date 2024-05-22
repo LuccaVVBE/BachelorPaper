@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  apache1:
+    build: ./CI_Microservice_BFF
+    container_name: apache1
+    networks:
+      - apache_network
+    ports:
+      - "8081:80"
+
+  apache2:
+    build: ./CI_Microservice_CallLog
+    container_name: apache2
+    networks:
+      - apache_network
+    ports:
+      - "8082:80"
+
+  apache3:
+    build: ./CI_Microservice_Telephone
+    container_name: apache3
+    networks:
+      - apache_network
+    ports:
+      - "8083:80"
+
+  apache4:
+    build: ./CI_Microservice_User
+    container_name: apache4
+    networks:
+      - apache_network
+    ports:
+      - "8084:80"
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+      - ./DATABASE.SQL:/docker-entrypoint-initdb.d/init.sql
+
+
+networks:
+  apache_network:
+    driver: bridge
+
+volumes:
+  my-db:

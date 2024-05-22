@@ -1,21 +1,13 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
-%todo sectie over verduidelijking termen, zoals design pattern, architectuur, energieefficiëntie, ...
-\section{Inleiding}
-Todo: overal een kort inleidende paragraaf, dit wordt pas gedaan eenmaal de sectie af is om een volledig beeld te schetsen hoe het past in de bachelorproef.\\
-In deze sectie ben ik van plan enkele termen al te verduidelijken om het vervolg van de literatuurstudie duidelijker te maken.
+In dit hoofdstuk wordt de huidige stand van zaken binnen het vakgebied van softwarearchitectuur en energie-efficiëntie onderzocht. Allereerst wordt een overzicht gegeven van de meest recente ontwikkelingen en trends op het gebied van softwarearchitecturen. Vervolgens wordt de focus verlegd naar het belang van energie-efficiëntie in softwareontwikkeling, met een beschrijving van relevante concepten en benaderingen die worden gebruikt om energieverbruik te meten en te verminderen. Tenslotte wordt een overzicht gemaakt van de literatuurstudie om een stevige basis van begrip te leggen voor het verdere onderzoek binnen dit vakgebied.
 
 
 \section{Ontwikkelarchitecturen}
-%TODO inleidende paragraaf
-Inleidende paragraaf:
+De keuze van de juiste softwarearchitectuur is van cruciaal belang voor het succes van een softwareproject. Deze sectie bevat een inleiding tot verschillende ontwikkelarchitecturen, waaronder de monoliet architectuur en de microservices architectuur. Voor elke ontwikkelarchitectuur is er een oplijsting van hun kenmerken, voordelen en nadelen, alsook hun toepassingsgebied. 
 
 \subsection{Wat is een architectuur}
-Een softwareontwikkelarchitectuur is een infrastructuur waarin applicatie componenten, die de functionele requirements voorzien, gespecificeerd, geïmplementeerd en uitgevoerd kunnen worden \autocite{Solms2012}. 
-
-\subsection{Nut van architectuur}
-\textcite{Jaiswal2019} stelt dat een architectuur de blauwdruk is van een systeem, waarbij het complexiteit beheert en communicatie tussen componenten mogelijk maakt. Het levert een gestructureerde oplossing voor technische en operationele eisen, met aandacht voor kwaliteitskenmerken zoals prestaties en beveiliging. De keuze van architectuur is een belangrijke beslissing die een aanzienlijke invloed heeft op de kwaliteit en het succes van het eindproduct.
-
+Een softwareontwikkelarchitectuur is een infrastructuur waarin applicatie componenten, die de functionele requirements voorzien, gespecificeerd, geïmplementeerd en uitgevoerd kunnen worden \autocite{Solms2012}. \textcite{Jaiswal2019} stelt dat een architectuur de blauwdruk is van een systeem, waarbij het complexiteit beheert en communicatie tussen componenten mogelijk maakt. Ze zijn als het ware een manier om herhalende problemen binnen software development aan te pakken door gebruik te maken van een fundamentele structuur, zijnde die blauwdruk \autocite{Dhaduk2020}.  Het levert een gestructureerde oplossing voor technische en operationele eisen, met aandacht voor kwaliteitskenmerken zoals prestaties en beveiliging. Elk van die architecturen heeft zijn voor en nadelen waardoor het belangrijk is om deze goed te vergelijken of ze in aanmerking komen voor de use case van de applicatie. Enkele voorbeelden van ontwikkelarchitecturen zijn: monolieten, microservices, event-driven architectuur, ...
 
 \subsection{Opbouw architectuur}
 Volgens \textcite{Solms2012} is een softwarearchitectuur opgebouwd uit 4 elementen:
@@ -27,9 +19,9 @@ Volgens \textcite{Solms2012} is een softwarearchitectuur opgebouwd uit 4 element
 \end{itemize}
 
 
-De basis concepten en regels zijn specifiek voor de bepaalde architectuur. Ze hebben 2 specifieke doelen, namelijk als extra documentatie om de architectuur beter te begrijpen en later makkelijk uitbreidingen toe te laten en te verifiëren of ze voldoen aan vooraf opgestelde regels en pricipes \autocite{Oussalah2013}. Verder hebben ze invloed op zowel de designfase als de implementatiefase.\\
+De basis concepten en regels zijn specifiek voor de bepaalde architectuur. Ze hebben 2 specifieke doelen, namelijk als extra documentatie om de architectuur beter te begrijpen en later makkelijk uitbreidingen toe te laten en te verifiëren of ze voldoen aan vooraf opgestelde regels en principes \autocite{Oussalah2013}. Verder hebben ze invloed op zowel de designfase als de implementatiefase.\\
 
-Architecturale componenten worden onderverdeeld in gebruikersinterface en structurele componenten \autocite{EDUCBA2023}. Zaken zoals de functionaliteiten van de client en server, maar ook de database interactie worden behandeld door de structurele componenten. Verder kan er ook onderverdeeld worden in verschillende lagen, zoals in figuur \ref{architectural_components_sota}. Hierin wordt de architectuur van een applicatie, iEnvironment, getoond. Er is de externe toegangslaag voor gebruikers die verbonden is met de gebruikersinterface laag. Die gaat dan op zijn beurt connectie maken naar de applicatielaag, datalaag en eventueel een externe toegangslaag waar data opgeslagen wordt. Elk van deze lagen is verantwoordelijk voor een bepaalde functionaliteit en zijn noodzakelijk om de volledige applicatie correct te laten verlopen.
+De architecturale componenten zijn onderverdeeld in gebruikersinterface en structurele componenten \autocite{EDUCBA2023}. Deze laatste behandelen zaken zoals de functionaliteiten van de client en server, maar ook de database interactie. Verder is er ook een onderverdeling mogelijk in verschillende lagen, zoals aangetoond in figuur \ref{architectural_components_sota} die de architectuur van de applicatie iEnvironment toont. Er is de externe toegangslaag voor gebruikers die verbonden is met de gebruikersinterface laag. Die gaat dan op zijn beurt connectie maken naar de applicatielaag, datalaag en eventueel een externe toegangslaag waar de applicatiedata opgeslagen is. Elk van deze lagen is verantwoordelijk voor een bepaalde functionaliteit en zijn noodzakelijk om de volledige applicatie correct te laten verlopen.
 
 \begin{figure}[ht]
     \includegraphics[scale=0.5]{architectural_components_sota}
@@ -40,13 +32,13 @@ Architecturale componenten worden onderverdeeld in gebruikersinterface en struct
 
 \bigskip
 
-De manieren waarop er gecommuniceerd kan worden met de applicatie moet ook duidelijk aangegeven zijn in de architectuur. Zo wordt de toegang en integratie gespecificeerd voor functionaliteit binnen de architectuur, applicatie logica voor externe functionaliteiten en tussen de architecturale componenten van de architectuur. Zo kan er bijvoorbeeld een web gebaseerde interface zijn voor menselijke gebruikers, terwijl systemen gebruik kunnen maken van web services zoals API's.\\
+De manieren waarop communicatie mogelijk is met de applicatie moet ook duidelijk aangegeven zijn in de architectuur. De algemene regels is dat de toegang en integratie gespecificeerd is voor: functionaliteit binnen de architectuur, applicatie logica voor externe functionaliteiten en de architecturale componenten van de architectuur. Zo kan er bijvoorbeeld een web gebaseerde interface zijn voor menselijke gebruikers, terwijl systemen gebruik kunnen maken van web services zoals API's.\\
 
-Als laatste zijn er de architecturale strategieën of ook wel tactieken genoemd. Ze zijn  ontwerpbeslissingen die het antwoord van de applicatie op een specifieke actie beïnvloeden dat belangrijk is voor bepaalde QA, quality attributes \autocite{Marquez2023}. Enkele QA die beïnvloedt kunnen worden door deze tactieken zijn aanpasbaarheid, afhankelijkheid, betrouwbaarheid, performantie, schaalbaarheid, ...
+Als laatste zijn er de architecturale strategieën of ook wel tactieken genoemd. Ze zijn  ontwerpbeslissingen die het antwoord van de applicatie op een specifieke actie beïnvloeden dat belangrijk is voor bepaalde QA, quality attributes \autocite{Marquez2023}. Enkele beïnvloedbare QA door deze tactieken zijn aanpasbaarheid, afhankelijkheid, betrouwbaarheid, performantie, schaalbaarheid, ...
 
-\subsection{Verschillende architecturen}
+\subsection{Verschillende architecturen} \label{sota-title-architecturen}
 \subsubsection{Monolithisch}
-Alhoewel nog vaak voorkomend is de monolithische architectuur eerder verouderd waar geen gebruik gemaakt wordt van modulariteit \autocite{Megargel2020}. De user interface werd direct verbonden met business logica die doorverbonden stond met een database, zoals voorgesteld in figuur \ref{monolith_sota}. Elk onderdeel wordt gedefinieerd als een distinctieve architectuurlaag van een monoliet applicatie, respectievelijk de user interfacelaag, business logicalaag en databaselaag. \\
+Alhoewel nog vaak voorkomend is de monolithische architectuur eerder verouderd waar modulariteit vaak niet aanwezig is\autocite{Megargel2020}. De user interface is rechtstreeks verbonden met business logica die doorverbonden staat met een database, zoals voorgesteld in figuur \ref{monolith_sota}. Elk onderdeel is gedefinieerd als een distinctieve architectuurlaag van een monoliet applicatie, respectievelijk de user interfacelaag, business logicalaag en databaselaag. \\
 
 \begin{figure}[H]
     \includegraphics[scale=0.8]{monolith_sota}
@@ -56,7 +48,7 @@ Alhoewel nog vaak voorkomend is de monolithische architectuur eerder verouderd w
 \end{figure}
 
 
-Het basis concept van deze architectuur is het centraal verzamelen van alle functies. Zoals vermeld zijn de architecturale componenten bij een monolithische architectuur duidelijk aanwezig. Echter zorgt deze structuur ervoor dat schaalbaarheid heel moeilijk verwezenlijkt kan worden. Het overbelasten van 1 functie zal veel resources in beslag nemen, die door alle functies gebruikt moet worden. Het verticaal schalen is hier de oplossing voor, met het toevoegen van meer RAM bijvoorbeeld, maar is niet altijd een haalbare oplossing. Aangezien alle modules of functies van de applicatie op 1 server gedeployed zijn gebeurd alle communicatie binnen hetzelfde proces en is er geen netwerk communicatie nodig \autocite{Ozkaya2023}. 
+Het basis concept van deze architectuur is het centraal verzamelen van alle functies. Dit zorgt ervoor dat de applicatie 'simpel' is. Omdat alles centraal staat, is het makkelijk om een applicatie met deze architectuur te ontwikkelen, testen en deployen \autocite{Hou2023}. Een ander voordeel is het gemakkelijk onderhouden en debuggen van de applicatie. Verder zijn zoals eerder vermeld de architecturale componenten bij een monolithische architectuur duidelijk aanwezig. Deze structuur maakt het schalen van applicaties, zijnde optimaal houden van de applicatie bij een toegenomen gebruik ervan, moeilijk. Het overbelasten van 1 functie zal veel resources in beslag nemen, die eigenlijk gelijk verdeeld (moet) zijn onder alle functies. Het verticaal schalen is hier de oplossing voor, met het toevoegen van meer RAM bijvoorbeeld, maar is niet altijd een haalbare oplossing. Aangezien alle modules of functies van de applicatie op 1 server gedeployd zijn gebeuren alle operaties binnen hetzelfde proces en is er geen netwerk communicatie nodig om de interne werking te voorzien \autocite{Ozkaya2023}. 
 
 
 \subsubsection{Microservices}
@@ -68,38 +60,30 @@ Microservices zijn een variant van de service-georiënteerde architectuur. Het b
     \label{microservice_sota}
 \end{figure}
 
-Het basisconcept bij deze architectuur is om elke functionaliteit zodanig op te splitsen dat elke business entiteit onafhankelijk kan functioneren. De architecturale componenten zijn hier, zoals voorgesteld in figuur \ref{microservice_sota}, een user interface of een applicatie van derden die verbonden is met een verzameling van microservices. De communicatie gebeurt via een API, waardoor zowel web applicaties als andere systemen gebruik kunnen maken van de beschikbaar gestelde functionaliteiten die de microservices bieden. Strategieën die gebruikt kunnen worden bij deze architectuur zijn het deployen naar een cloud omgeving waar alles automatisch geschaald kan worden. Wanneer één service meer belast wordt dan de andere, krijgt deze automatisch meer resources toegewezen zonder dat de andere services beïnvloedt worden. Ook zorgt dit ervoor dat de applicatie grotendeels blijft werken wanneer een microservice (tijdelijk) niet beschikbaar is.
-
-\subsubsection{Gelaagde architectuur}
-Todo: Uitleggen van gelaagde architectuur
+Het basisconcept bij deze architectuur is om elke functionaliteit zodanig op te splitsen dat elke business entiteit onafhankelijk kan functioneren. De architecturale componenten zijn hier, zoals voorgesteld in figuur \ref{microservice_sota}, een user interface of een applicatie van derden die verbonden is met een verzameling van microservices. De communicatie gebeurt via een API, waardoor zowel web applicaties als andere systemen gebruik kunnen maken van de beschikbaar gestelde functionaliteiten die de microservices bieden. Een van de gebruikte strategieën is het deployen naar een cloud omgeving die de applicatie automatisch extra resources kan toewijzen. Wanneer één service meer belast is dan de andere, krijgt deze automatisch meer resources toegewezen zonder dat de andere services hier een impact van ondervinden. Ook zorgt dit ervoor dat de applicatie grotendeels blijft werken wanneer een microservice (tijdelijk) niet beschikbaar is.
 
 \subsubsection{Andere architecturen}
-
+Er zijn nog vele andere architecturen, waaronder event driven architectuur, service georiënteerde architectuur, ... Ze verder opnoemen en in detail bespreken breidt de scope van deze bachelorproef te veel uit en wordt er enkel gefocust op de monoliet en de microservice architectuur. 
 
 \subsection{Samengevat}
-Kort kan dus gezegd worden dat een ontwikkelarchitectuur richtlijnen geeft hoe een applicatie ontwikkeld wordt. Het levert een structuur die de prestaties en beveiliging beïnvloeden. De 4 bouwdelen van een architectuur zorgen ervoor dat een applicatie gemakkelijk uitbreidbaar is, logisch is opgebouwd, bereikbaar is zowel voor mens als systemen en voldoet aan kwaliteitseisen.
+Samengevat wil dit zeggen dat een ontwikkelarchitectuur richtlijnen geeft hoe een applicatie ontwikkeld wordt. Het levert een structuur die de prestaties en beveiliging beïnvloeden. De 4 bouwdelen van een architectuur zorgen ervoor dat een applicatie gemakkelijk uitbreidbaar is, logisch is opgebouwd, bereikbaar is zowel voor mens als systemen en voldoet aan kwaliteitseisen.
 
 
 
-\section{Energie-efficiëntie}
-%todo inleidende paragraaf
-Inleidende paragraaf: 
+\section{Energieverbruik van software}
+Deze sectie verduidelijkt de definitie van energie-efficiëntie, alsook hoe software energie verbruikt. De verschillende benaderingen en technieken voor het meten en verminderen van energieverbruik zijn ook getackeld in dit hoofdstuk, waaronder optimalisatie van code.
 
 \subsection{Wat is energie-efficiëntie}
- % oud artikel, maar wel interessant!
-Energie-efficiëntie is een generieke, niet-meetbare term \autocite{Patterson1996}. Het is wel een vergelijkbare term, in die zin dat er vergeleken wordt hoeveel energie er gebruikt wordt voor eenzelfde service of bruikbare output te verkrijgen in verschillende situaties. Het wordt vaak gedefinieerd als de ratio 
+Energie-efficiëntie is een generieke, niet-meetbare term \autocite{Patterson1996}. Het is wel een vergelijkbare term, in die zin dat men kan vergelijken hoeveel energie eenzelfde service of bruikbare output verbruikt in verschillende situaties. Het wordt vaak gedefinieerd als de ratio 
 $\frac{\text{Bruikbare output}}{\text{Energie input}}$ .
 
 
 
 \subsection{Energieverbruik van software}
-%inleiding? Eerdere onderzoeken aanhalen en in subsecties onderverdelen en bespreken.
-%todo: hoe wordt precies energie verbruikt door software?
-\subsection{Link met programmeertalen}
-\autocite{Manner2022}
+Het energieverbruik van software ligt nauw samen met de performantie ervan. Voor beiden worden de resources gemonitord, echter wordt andere data verzameld. Voor energieverbruik gaat het niet om in welke mate de applicatie resource gebruikt, maar eerder hoeveel energie ze dus verbruiken \autocite{Kor2015}. Het meten van energieverbruik is niet een eenmalige taak, maar gebeurt best meerdere keren over een bepaald scenario. Dit vormt een beter beeld over het effectieve energieverbruik van een applicatie in verschillende situaties, zoals mogelijke achtergrondprocessen dat eventueel een impact kunnen hebben.
 
-%verschil compiled, interpreted en 
-Volgens \textcite{Jain2024} kan software in 2 manieren verdeeld worden waarop een applicatie vertaalt wordt naar machine taal. Er is compiled language en interpreted language. Compiled gaat de volledige code voor het opstarten van het programma in zijn geheel compileren. Dit leidt tot een efficiëntere applicatie omdat de vertaling van code naar machine taal al gebeurd is. Dit in tegenstelling tot interpreted language. Hier wordt code lijn per lijn vertaald en uitgevoerd. Dit zorgt er dan voor dat de applicatie flexibeler is waardoor het programma minder snel uitgevoerd wordt.\\
+\subsection{Link met programmeertalen}
+Volgens \textcite{Jain2024} kan software in 2 manieren verdeeld worden waarop een applicatie vertaald wordt naar machine taal. Er is compiled language en interpreted language. Compiled gaat de volledige code voor het opstarten van het programma in zijn geheel compileren. Dit leidt tot een efficiëntere applicatie omdat de vertaling van code naar machine taal al gebeurd is. De interpreted language werkt op een hele andere manier. Hier wordt code lijn per lijn vertaald en uitgevoerd. Dit zorgt er dan voor dat de applicatie flexibeler is, met als nadeel dat de uitvoeringstijd vertraagd is.\\
 
 Zo blijkt ook uit onderzoek van \textcite{Pereira2017} dat de keuze van programmeertaal een grote impact kan hebben op het energieverbruik van de applicatie. Zo blijkt uit figuur \ref{verbruik_taal_sota} dat C\footnote{https://www.cprogramming.com/}, een compiled language, de meest energiezuinige taal is en Perl\footnote{https://www.perl.org/}, een interpreted taal, het meeste energie verbruikt, namelijk tot wel 80 keer zoveel als C voor het runnen van eenzelfde applicatie. \\
 
@@ -113,11 +97,9 @@ Zo blijkt ook uit onderzoek van \textcite{Pereira2017} dat de keuze van programm
 
 
 \subsection{Link met programmeerprincipes}
-Bij het ontwikkelen van programma's is de eindfunctionaliteit vaak vastgelegd. Het programma moet namelijk een of meerdere taken kunnen uitvoeren. Echter is het zo dat het niet vastligt hoe het ontwikkeld wordt. Om één bepaalde uitkomst te bekomen zijn er meerdere manieren om dit te verwezenlijken. Wanneer 1 verwachte uitkomst door verschillende programmeurs ontwikkeld wordt, zal er zelden 100\% gelijke code geschreven worden. Dit komt door de eigen stijl/manier van ontwikkelen.
+Bij het ontwikkelen van programma's is de eindfunctionaliteit vaak vastgelegd. Het programma moet namelijk één of meerdere taken kunnen uitvoeren. Echter is het zo dat het niet vastligt hoe de ontwikkeling gebeurd. Om één bepaalde uitkomst te bekomen zijn er meerdere manieren om dit te verwezenlijken. Als verschillende programmeurs zelfstandig werken aan eenzelfde probleem, zal er zelden 100\% gelijke code voorkomen. Dit komt door de eigen stijl/manier van ontwikkelen.\\
 
-\bigskip
-
-In het onderzoek van \textcite{Hassan2017} wordt aangetoond dat een verschillende programmeerstijl impact kan hebben op het energieverbruik van een applicatie. Zo is er in figuur \ref{3_coding_styles_sota} een selection sort geprogrammeerd op 3 manieren. De eerste manier sorteert eerst de array en zal eenmaal gesorteerd de array uitschrijven naar de console. In de tweede manier wordt tijdens het sorteren al uitgeschreven naar de console en als laatste manier wordt er zoals de eerste stijl gewerkt, maar wordt er om de 500 items een pauze gehouden om de processor even te stoppen en na te gaan of een sleep operatie een invloed heeft op energieverbruik. De resultaten zijn beschikbaar in figuur \ref{energy_consumption_situations_sota}. Hieruit kan er besloten worden dat elke manier verschilt in energieverbruik. Dit is echter niet het enige wat deze resultaten aanduiden. De compilers waarop deze testen uitgevoerd werden hebben duidelijk ook een impact op het energieverbruik.\\
+In het onderzoek van \textcite{Hassan2017} wordt aangetoond dat een verschillende programmeerstijl impact kan hebben op het energieverbruik van een applicatie. Zo is er in figuur \ref{3_coding_styles_sota} een selection sort geprogrammeerd op 3 manieren. De eerste manier sorteert eerst de array en zal eenmaal gesorteerd de array uitschrijven naar de console. In de tweede manier zal tijdens het sorteren het algoritme de gesorteerde elementen al uitschrijven naar de console. Als laatste manier houdt men een zelfde werkwijze aan als de eerste manier, maar last men om de 500 items een pauze om de processor even te stoppen en na te gaan of een sleep operatie invloed heeft op het energieverbruik. De resultaten zijn beschikbaar in figuur \ref{energy_consumption_situations_sota}. Hieruit kan er besloten worden dat elke manier verschilt in energieverbruik. Dit is echter niet het enige wat deze resultaten aanduiden. De compilers waarop deze testen uitgevoerd werden hebben duidelijk ook een impact op het energieverbruik.\\
 
 \bigskip
 
@@ -141,7 +123,7 @@ Ook datatypes spelen een rol in het energieverbruik van software. Gegevens opsla
 
 \bigskip
 
-Wat echter wel altijd haalbaar is, is wanneer een string voorgesteld moet worden. Het gebruik maken van een StringBuilder, een ingebouwde klasse die string operaties kan uitvoeren, verbruikt nagenoeg geen energie. Wanneer de gewone String klasse gebruikt wordt, verbruikt dit duizenden keren meer energie dan de StringBuilder. Dit fenomeen wordt aangetoond in figuur \ref{energy_consumption_string_sota}. 
+Wat echter wel altijd haalbaar is, is wanneer een string, een datatype dat tekst bevat, voorgesteld moet worden. Het gebruik maken van een StringBuilder, een ingebouwde klasse die string operaties kan uitvoeren, verbruikt nagenoeg geen energie. Wanneer de gewone String klasse gebruikt wordt, verbruikt dit duizenden keren meer energie dan de StringBuilder. Dit fenomeen wordt aangetoond in figuur \ref{energy_consumption_string_sota}. 
 
 \bigskip
 
@@ -167,10 +149,9 @@ Volgens \textcite{Lubomski2020} zijn de 3 karakteristieken die performantie bepa
 
 \bigskip
 
-De karakteristiek dat inspeelt op energieverbruik van software is het resource gebruik. Hieronder valt CPU-, RAM-, disk- en netwerkgebruik. Dit wordt bevestigd door figuur \ref{cpu_usage_sota}, waar een hoger CPU-gebruik gelijk staat aan een hoger energieverbruik.\\
+Het karakteristiek dat inspeelt op energieverbruik van software is het resource gebruik. Hieronder valt CPU-, RAM-, disk- en netwerkgebruik. Dit wordt bevestigd door figuur \ref{cpu_usage_sota}, waar een hoger CPU-gebruik gelijk staat aan een hoger energieverbruik.\\
 
 
-%\autocite{Hassan2017} %goed onderzoek
 
 \begin{figure}[h!]
     \includegraphics{cpu_usage_sota}
@@ -180,25 +161,27 @@ De karakteristiek dat inspeelt op energieverbruik van software is het resource g
 \end{figure}
 
 \subsection{Meten van energieverbruik}
-%\autocite{Ergasheva2020} %kan interessant zijn
-Het meten van energieverbruik bij software is een complexe taak. Volgens het onderzoek van \autocite{Dutta2023} is het echter niet de software dat energie verbruikt, maar is het de logica van de gecompileerde code die de hardware componenten, zoals de processor en geheugen, aanstuurt die op hun beurt energie verbruiken. Daarom wordt vaak bij het vermelden van `energieverbruik van software` gerefereerd naar het energieverbruik van de hardware componenten die aangestuurd worden door de code.
+Het meten van energieverbruik bij software is een complexe taak. Volgens het onderzoek van \autocite{Dutta2023} is het echter niet de software dat energie verbruikt, maar is het de logica van de gecompileerde code die de hardware componenten, zoals de processor en geheugen, aanstuurt die op hun beurt energie verbruiken. Daarom refereert men vaak bij het vermelden van `energieverbruik van software` naar het energieverbruik van de hardware componenten die aangestuurd zijn door de code.\\
 
-\bigskip
-%todo: paragraaf over het meten van energieverbruik bij software
-Twee vaak gebruikte manieren om het energieverbruik te meten van software zijn het gebruik van een energiemeter of een combinatie van processen op een Linux systeem die toelaten om het verbruik softwarematig te meten en visueel voor te stellen in een Grafana\footnote{https://grafana.com/} dashboard. Voor andere operating systems blijkt het niet of moeilijk haalbaar om softwarematig energieverbruik te meten van applicaties. \bigskip
+Twee vaak gebruikte manieren om het energieverbruik te meten van software zijn het gebruik van een energiemeter of een  proces op een Linux systeem die toelaten om het verbruik softwarematig te meten. Dit soort software maakt gebruik van  de RAPL technologie. RAPL, de afkorting voor ´Running Average Power Limit´, is een interface dat het actuele energie verbruik meet van een applicatie \autocite{Agarwal2023}. Een voorbeeld van software die deze technologie gebruikt is PowerJoular\footnote{https://github.com/joular/powerjoular}. Deze meet het verbruik van CPU en GPU van één of meerdere processen\autocite{Noureddine2022}. Voor andere operating systems blijkt het niet of moeilijk haalbaar om softwarematig energieverbruik te meten van applicaties. \\
 
-Het meten via een energiemeter heeft als nadeel dat je niet op applicatie- of procesniveau kunt monitoren. Het meet namelijk de stroom dat direct uit het stopcontact verbruikt wordt. Hiermee kan dus wel het totale verbruik van het systeem gemonitord worden. Voor het meten op applicatieniveau kan er eerst een meting gebeuren op een idle systeem, waar het programma niet aan het runnen is, en dan een meting wanneer de applicatie wel actief is. Het verschil is dan het energieverbruik op applicatieniveau, alhoewel dit niet nauwkeurig is omdat eventuele andere achtergrondprocessen geactiveerd of gedeactiveerd kunnen worden tijdens de meting. \bigskip
+Het meten via een energiemeter heeft als nadeel dat je niet op applicatie- of procesniveau kunt monitoren. Het meet namelijk de stroom dat direct uit het stopcontact verbruikt wordt. Hiermee kan dus wel het totale verbruik van het systeem gemonitord worden. Voor het meten op applicatieniveau kan er eerst een meting gebeuren op een idle systeem, waar het programma niet aan het runnen is, en dan een meting wanneer de applicatie wel actief is. Het verschil is dan het energieverbruik op applicatieniveau, alhoewel dit niet nauwkeurig is omdat eventuele andere achtergrondprocessen geactiveerd of gedeactiveerd kunnen worden tijdens de meting. \\
 
-Het softwarematig meten van energieverbruik laat wel toe om op applicatie- of procesniveau te monitoren. Hiervoor is er een applicatie of proces nodig dat toegang heeft tot alle actieve processen op het systeem, alsook het resourcegebruik hiervan. Afhankelijk van de hardware kan er al dan niet rechtstreeks ook het energieverbruik getoond worden. \bigskip
-%https://medium.com/@dreams-smoke/how-to-monitor-power-usage-of-your-linux-computing-system-with-prometheus-grafana-f21b9933762
+Het softwarematig meten van energieverbruik laat wel toe om op applicatie- of procesniveau te monitoren. Hiervoor is er een applicatie of proces nodig dat toegang heeft tot alle actieve processen op het systeem, alsook het resourcegebruik hiervan. Afhankelijk van de hardware kan de applicatie al dan niet rechtstreeks ook het energieverbruik tonen. \\
+%https://github.com/joular/powerjoular
 
-%\autocite{Procaccianti2015}
 
 \subsection{Samengevat}
-Energieverbruik van software is op meerdere vlakken al grondig onderzocht. Zo is er een verschil bij de keuze in programmeertaal. Kiezen voor de meest efficiënte compiled language kan tot wel 80 keer zo energiezuiniger werken dan de minst efficiënte interpreted language. Ook het hanteren van bepaalde programmeerprincipes zoals stijl of datatypes beïnvloeden het energieverbruik. Ook wijzen onderzoeken uit dat de compiler die de code uitvoert een degelijke impact heeft. Verder is performantie ook een belangrijke factor. Inefficiënt gebruik van resources leidt tot hoger energieverbruik van componenten zoals CPU, RAM, disk, ... Om het verbruik van software in kaart te brengen kan er gebruik gemaakt worden van een energiemeter of bepaalde software. Een energiemeter zal minder nauwkeurige resultaten afleveren dan de softwarematige metingen, maar kan in elke situatie gebruikt worden terwijl de softwarematige metingen vaak beperkt zijn tot 1 operating system. 
+Energieverbruik van software is op meerdere vlakken al grondig onderzocht. Zo is er een verschil bij de keuze in programmeertaal. Kiezen voor de meest efficiënte compiled language kan tot wel 80 keer zo energiezuiniger werken dan de minst efficiënte interpreted language. Ook het hanteren van bepaalde programmeerprincipes zoals stijl of datatypes beïnvloeden het energieverbruik. Ook wijzen onderzoeken uit dat de compiler die de code uitvoert een degelijke impact heeft.\\
+
+Verder is performantie ook een belangrijke factor. Inefficiënt gebruik van resources leidt tot hoger energieverbruik van componenten zoals CPU, RAM, disk, ... Om het verbruik van software in kaart te brengen kan men gebruik maken van een energiemeter of bepaalde software. Een energiemeter zal minder nauwkeurige resultaten afleveren dan de softwarematige metingen, maar kan in elke situatie gebruikt worden terwijl de softwarematige metingen vaak beperkt zijn tot 1 operating system. 
 
 \section{Literatuurstudie samengevat}
-%todo: korte samenvatting wat belangrijk is om te weten uit de literatuurstudie
+De literatuurstudie richt zich op twee belangrijke aspecten: ontwikkelarchitecturen en energie-efficiëntie, of verschil in energieverbruik, van software. Ontwikkelarchitecturen bieden richtlijnen voor het ontwerp van softwareapplicaties, waarbij de structuur invloed heeft op prestaties, beveiliging, uitbreidbaarheid en kwaliteit. De vier bouwdelen van een architectuur zorgen voor een logische en toegankelijke opbouw die voldoet aan kwaliteitseisen en, in sommige gevallen, gemakkelijk uitbreidbaar is.\\
+
+Het energieverbruik van software is uitgebreid onderzocht, met nadruk op verschillende aspecten die van invloed kunnen zijn. Bijvoorbeeld, de keuze van programmeertaal kan aanzienlijke verschillen in energieverbruik veroorzaken, waarbij compiled languages tot 80 keer energiezuiniger kunnen zijn dan interpreted languages. Programmeerprincipes zoals stijl en datatypes spelen ook een rol, evenals de compiler die de code uitvoert. Bovendien is het correct gebruiken van resources een cruciale factor, waarbij het niet optimaal gebruiken van resources leidt tot hoger energieverbruik van componenten zoals CPU, RAM en disk.\\
+
+Om het energieverbruik van software in kaart te brengen, kunnen energiemeters of specifieke software worden gebruikt. Hoewel energiemeters minder nauwkeurige resultaten opleveren dan softwarematige metingen, zijn ze breed inzetbaar. Aan de andere kant zijn softwarematige metingen vaak beperkt tot één besturingssysteem.\\
 
 
 % Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe

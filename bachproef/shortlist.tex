@@ -1,0 +1,25 @@
+%%---------- Short list  -----------------------------------------------------
+
+
+\chapter{\IfLanguageName{dutch}{Short list}{Short list}}
+\label{ch:short-list}
+Dit hoofdstuk omvat de short list van architecturen en meetmethoden samengesteld die gebruikt zullen worden in de Proof of Concept (PoC). De selectie is gebaseerd op criteria zoals de huidige situatie van Davo Group, compatibele architecturen met de use case voor de PoC en beschikbaarheid van meetinstrumenten.
+
+\section{Architecturen}
+De gebruikte architecturen binnen de proof of concept zijn gekozen op basis van het PoC scenario, dat uitgeschreven is in hoofdstuk \ref{poc-scenario}. Een architectuur is compatibel met dit scenario wanneer het nut en de bouwelementen van de architectuur overeenkomen met wat er nodig is in de PoC.
+
+
+\subsection{Monoliet}
+Het huidige klantenportaal van Davo Group is uitgebouwd als monoliet. Daarom is het belangrijk om het energieverbruik bij deze ontwikkelarchitectuur te meten zodat er een mogelijks verschil in energie efficiëntie kan waargenomen worden tussen de verschillende architecturen. Zoals vermeld in hoofdstuk \ref{sota-title-architecturen} is een applicatie met deze architectuur vrij eenvoudig te ontwikkelen. Echter zullen er wel bewuste keuzes gemaakt moeten worden zodanig dat bepaalde functies niet alle resources innemen en daardoor de performantie van heel de applicatie beïnvloeden.
+
+
+\subsection{Microservice}
+De microservices architectuur verdeelt een complexe applicatie in kleinere services die beheersbaar blijven en vaak complexiteit beperken, zoals besproken in hoofdstuk \ref{sota-title-architecturen}. Dit is aansluitend bij het klantenportaal van Davo Group. Het portaal maakt namelijk veel berekeningen, bijvoorbeeld het verbruik van telefonielijnen, waar dagelijks duizenden call records bekeken, gegroepeerd en verwerkt worden om dan weer te geven in het portaal. Deze berekeningen in een aparte service laten uitvoeren zou de algemene performantie van de andere applicatiecomponenten niet beïnvloeden, in tegenstelling tot de monoliet. Dit maakt een microservice architectuur een perfecte kandidaat om een poging te doen tot een verbetering in energie efficiëntie.
+
+
+\section{Meten van energieverbruik}
+De tool PowerJoular monitort en geeft data weer van resourcegebruik en beschikt ook over de mogelijkheid om energieverbruik te meten van applicaties. Deze combinatie werkt enkel op een Linux systeem. Er zijn enkele voorwaarden, namelijk dat het energieverbruik van Intel en AMD processors en Nvidia grafische kaarten die RAPL ondersteunen \autocite{Noureddine2022}
+%https://medium.com/@dreams-smoke/how-to-monitor-power-usage-of-your-linux-computing-system-with-prometheus-grafana-f21b9933762
+
+%https://jmeter.apache.org/
+

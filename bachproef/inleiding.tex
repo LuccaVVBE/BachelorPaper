@@ -4,11 +4,13 @@
 
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
-De ICT-sector heeft in de afgelopen decennia een exponentiële groei doorgemaakt, waardoor het een cruciale rol speelt in onze moderne samenleving. Deze technologische vooruitgang verbergt echter een groeiend probleem: het toenemende energieverbruik van ICT-systemen. Momenteel wordt ongeveer 10\% van het wereldwijde elektriciteitsverbruik besteed aan informaticasystemen, een percentage dat jaarlijks blijft stijgen \autocite{Gelenbe2023}.\\
+De ICT-sector heeft in de afgelopen decennia een exponentiële groei in (complexe) toepassingen doorgemaakt, waardoor het een belangrijke rol speelt in onze moderne samenleving. De technologische vooruitgang verbergt een groeiend probleem: het toenemende energieverbruik van ICT-systemen. De huidige situatie duidt aan dat ongeveer 10\% van het wereldwijde elektriciteitsverbruik besteed wordt aan informaticasystemen, een percentage dat jaarlijks blijft stijgen \autocite{Gelenbe2023}.\\
 
-Deze alarmerende trend heeft de aandacht gevestigd op de dringende behoefte aan energie-efficiëntie binnen de ICT-wereld. In dit kader wordt softwareontwikkeling beschouwd als een cruciale factor, omdat de keuzes die worden gemaakt tijdens het ontwerpen en implementeren van software een directe invloed hebben op het energieverbruik van de uiteindelijke systemen.\\
+Deze trend heeft de aandacht gevestigd op de dringende behoefte aan het verminderen van energieverbruik binnen de ICT-wereld. In dit kader is softwareontwikkeling een cruciale factor, omdat de gemaakte keuzes omtrent het ontwerpen en ontwikkelen van software een directe invloed hebben op het energieverbruik van de uiteindelijke systemen. Een voorbeeld hiervan is de opkomst van computed programmeertalen die ontwikkeling vereenvoudigen in vergelijking met de compiled talen, maar meer energie verbruiken \autocite{Manner2022}.\\
 
-Energie-efficiëntie binnen softwareontwikkeling gaat verder dan enkel het minimaliseren van het energieverbruik. Het optimaal houden van softwareprestaties is ook een belangrijke factor. Het is eerder aangetoond dat gebruik van efficiënte ontwerp- en programmeerpraktijken, zoals het toepassen van geschikte design patterns en het optimaliseren van datastructuren, een aanzienlijke invloed kan hebben op de hoeveelheid energie die een softwaretoepassing verbruikt.
+De poging tot het terugdringen van deze trend binnen softwareontwikkeling gaat verder dan enkel het minimaliseren van het energieverbruik. Het optimaal gebruik van resources binnen software is ook een belangrijke factor. Verschillende onderzoeken in het voorbije decennium hebben aangetoond dat het gebruik van gepaste ontwerp- en programmeerprincipes, zoals het toepassen van geschikte design patterns en het optimaliseren van datastructuren, een aanzienlijke invloed kan hebben op de hoeveelheid energie die een softwaretoepassing verbruikt. Elke use case is anders en kan niet via elk design pattern ontwikkeld worden.\\
+
+Een voorbeeld van een niet geschikt design pattern voor een bepaalde use case zou het gebruik van een recursieve methode kunnen zijn voor het doorlopen van een grote dataset, waarbij elke recursieve oproep een nieuwe instantie van de methode creëert en mogelijks veel resources verbruikt. In plaats daarvan kan een iteratieve aanpak met een algoritme die minder resources verbruikt de voorkeur hebben om onnodig energieverbruik te vermijden.
 
 %De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
 
@@ -24,20 +26,23 @@ Energie-efficiëntie binnen softwareontwikkeling gaat verder dan enkel het minim
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
 \label{sec:probleemstelling}
+\subsection{Davo Group NV, een bedrijfsschets}
+Davo Group is een bedrijf dat begonnen is als eenmanszaak in 2009 en is momenteel uitgebouwd tot een bedrijf met meer dan 30 werknemers. Ze zijn een IT-integrator van performante, veilige datasnelwegen, complexe voice-oplossingen, VoIP-telefonie, Wi-Fi, netwerkbeveiliging, toegangscontrole, .... In maart 2024 trokken ze in in een nieuw, duurzaam, bedrijfscentrum te Drongen, genaamd In The Yard. Dit gebouw voldoet aan het WELL certificaat, dat duidt op energie- en waterbesparing, fossielvrij verwarmen, ...
 
-Deze bachelorproef richt zich specifiek op het bedrijf Davo Group NV, meer bepaald het progress team dat instaat voor de softwareontwikkeling, dat zich inzet voor een duurzame bedrijfsvoering. Davo Group NV wenst te onderzoeken hoe zij energie-efficiëntie kunnen bevorderen binnen hun applicatieontwikkeling. Het specifieke aandachtspunt ligt bij de mogelijke impact van een verandering in architectuur op het energieverbruik. Hierbij wordt onderzocht en vergeleken hoe verschillende ontwikkelarchitecturen, waaronder de monolithische architectuur, zich verhouden op het gebied van energie-efficiëntie, met behoud van softwareprestaties.
+\subsection{Probleem}
+Davo Group ondernam al enkele stappen om als duurzamer bedrijf op de markt te staan. Nu kijken ze richting het Progress team, dat instaat voor de softwareontwikkeling binnen het bedrijf, om ook daar een poging te doen tot een duurzamere applicatieontwikkeling. Het huidige klantenportaal is uitgewerkt als een monoliet. Dit is een architectuur dat vrij verouderd is, alhoewel deze nog vaak gebruikt wordt in bedrijfsomgevingen. Dit wekte de vraag of een verandering in architectuur een positieve impact kan hebben op het energieverbruik. Daarvoor wensen ze te onderzoeken hoe verschillende ontwikkelarchitecturen, waaronder de monolithische architectuur, zich verhouden op het gebied van energieverbruik.
  
 %Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
 \label{sec:onderzoeksvraag}
-De onderzoeksvraag van deze bachelorproef is nagaan hoe Davo Group NV energie-efficiënter kan worden op vlak van applicaties door gebruik te maken van een bepaalde ontwikkelarchitectuur.
+Om het probleem van Davo Group op te kunnen lossen is een onderzoek nodig die enkele architecturen vergelijkt tegenover de monolithische architectuur op vlak van energieverbruik voor een vooraf bepaalde use case. Dit brengt de vraag: `Wat is de impact op energieverbruik bij een architecturale verandering van een applicatie?'.
 
 %Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
 \label{sec:onderzoeksdoelstelling}
-Het antwoord op de onderzoeksvraag is een eerste indicatie of softwareontwikkelarchitecturen een invloed heeft op de energie-efficiëntie van applicaties. Het onderzoek gebeurt aan de hand van een proof of concept waar 3 verschillende architecturen getest worden. 
+Het antwoord op de onderzoeksvraag is een eerste indicatie of softwareontwikkelarchitecturen een invloed heeft op het energieverbruik van een applicatie. Het onderzoek gebeurt aan de hand van een proof of concept waar een applicatie ontwikkeld wordt in 3 verschillende architecturen, met de monolithische architectuur er één van. 
 %Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
@@ -54,5 +59,13 @@ In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand v
 In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
 
 % TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In Hoofdstuk~\ref{ch:short-list} wordt een lijst opgesteld met de gebruikte technologieën voor de proof of concept, ook wel de short list genoemd.
 
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+In Hoofdstuk~\ref{ch:opzet-poc} wordt de volledige opstelling van de proof of concept besproken. Hoe de applicaties zijn opgebouwd, welke methodes aanwezig zijn, de gebruikte data, ... wordt door dit hoofdstuk behandeld.
+
+In Hoofdstuk~\ref{ch:test-poc} wordt er uitgebreid getest op de proof of concept. Resultaten zoals energieverbruik van elke applicatie worden hier opgenomen. 
+
+In Hoofdstuk~\ref{ch:analyse-test-poc} worden de resultaten geanalyseerd om in Hoofdstuk~\ref{ch:conclusie} een conclusie te vormen.
+
+
+Tenslotte, in Hoofdstuk~\ref{ch:conclusie}, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.

@@ -13,6 +13,7 @@
 
 \usepackage{lipsum} % For blind text, can be removed after adding actual content
 
+
 %% Pictures to include in the text can be put in the graphics/ folder
 \graphicspath{{graphics/}}
 
@@ -49,14 +50,15 @@
 }
 
 % Other packages not already included can be imported here
-
+\usepackage{listings} % for code fragments
+\usepackage{pgfplotstable} % for csv to table
 %%---------- Document metadata -------------------------------------------------
 % TODO: Replace title, maybe!
 \author{Lucca Van Veerdeghem}
 \supervisor{Dhr. L. Smits}
 \cosupervisor{Dhr. H. Kaymak}
 \title[Onderzoek naar ontwikkelarchitecturen]%
-    {Energie-efficiëntie in softwareontwikkeling}
+    {Onderzoek naar vermindering van energie verbruik binnen softwareontwikkeling}
 \academicyear{\advance\year by -1 \the\year--\advance\year by 1 \the\year}
 \examperiod{1}
 \degreesought{\IfLanguageName{dutch}{Professionele bachelor in de toegepaste informatica}{Bachelor of applied computer science}}
@@ -115,11 +117,11 @@
 
 % If you included tables and/or source code listings, uncomment the appropriate
 % lines.
-%\listoftables
+\listoftables
 %\listoflistings
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
-% hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
+% hier thuis. Gebruik bijvoorbeeld de ``glossaries'' .
 % https://www.overleaf.com/learn/latex/Glossaries
 
 %---------- Kern ---------------------------------------------------------------
@@ -135,6 +137,10 @@
 \input{inleiding}
 \input{standvanzaken}
 \input{methodologie}
+\input{shortlist}
+\input{opzetPoC}
+\input{testPoC}
+\input{analyseresultaten}
 
 % Voeg hier je eigen hoofdstukken toe die de ``corpus'' van je bachelorproef
 % vormen. De structuur en titels hangen af van je eigen onderzoek. Je kan bv.
@@ -154,9 +160,8 @@
 
 Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat vooraf werd beoordeeld door de promotor. Dat voorstel is opgenomen in deze bijlage.
 
-%% TODO: 
-%\section*{Samenvatting}
-
+\section*{Samenvatting}
+De ICT-sector is wereldwijd een grote verbruiker in elektriciteit. Jaarlijks stijgt dat verbruik en ontstaat de nood aan een duurzame ontwikkeling. Eerdere studies tonen aan dat het mogelijk is om energie-efficiënter te werken in software door gebruik te maken van bepaalde design patterns en datastructuren. In deze paper richt het onderzoek zich op de impact die ontwikkelarchitecturen mogelijks hebben op de energie-efficiëntie van software. Voor het bekomen van een resultaat wordt een uitgebreide literatuurstudie, requirement analyse, long list, proof of concept en een conclusie op basis van de literatuurstudie en PoC-resultaten uitgewerkt. Het verwachte resultaat uit dit onderzoek is een duidelijk verschil in energie-efficiëntie per onderzochte ontwikkelarchitectuur. Dit zal Davo Group NV een leidraad geven over hoe ze hun software ontwikkelingsproces duurzaam kunnen opstellen.
 % Kopieer en plak hier de samenvatting (abstract) van je onderzoeksvoorstel.
 
 % Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
@@ -165,7 +170,7 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 %%---------- Andere bijlagen --------------------------------------------------
 % TODO: Voeg hier eventuele andere bijlagen toe. Bv. als je deze BP voor de
 % tweede keer indient, een overzicht van de verbeteringen t.o.v. het origineel.
-%\input{...}
+\input{bijlagen}
 
 %%---------- Backmatter, referentielijst ---------------------------------------
 
