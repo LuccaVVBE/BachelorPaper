@@ -14,5 +14,14 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
-\lipsum[76-80]
+Dit onderzoek richtte zich op het analyseren van de impact van architecturale veranderingen op het energieverbruik van een applicatie, specifiek door het vergelijken van een monolithische architectuur met een microservice architectuur. De centrale onderzoeksvraag was: "Wat is de impact op energieverbruik bij een architecturale verandering van een applicatie?".\\
 
+Uit de literatuurstudie bleek dat de gekozen ontwikkelarchitectuur aanzienlijke invloed heeft op de prestaties en het energieverbruik van een applicatie. Ontwikkelarchitecturen bieden richtlijnen voor het structureren van een applicatie, waardoor deze uitbreidbaar, logisch opgebouwd en kwalitatief hoogstaand blijft. Bovendien speelt de keuze van programmeertaal en programmeerprincipes een cruciale rol bij het optimaliseren van energieverbruik.\\
+
+De uitgewerkte Proof of Concept (PoC) applicatie bestaat uit een monolithische en een microservice versie. Beide versies, gehost in een docker omgeving, bevatten specifieke methoden en controllers om gebruikers te laten inloggen en het verbruik van telefoonnummers te raadplegen. Zo zijn zowel resource intensieve als niet resource intensive gesimuleerd in de applicatie.\\
+
+De uitgevoerde tests onderwierpen beide architecturen aan een groot aantal requests om het energieverbruik te meten. Hierbij werd gebruik gemaakt van softwarematige metingen, meer bepaald de RAPL technologie, om de energieconsumptie nauwkeurig in kaart te brengen.\\
+
+Uit de resultaten kan geconcludeerd worden dat een verandering in ontwikkelarchitectuur een degelijke impact kan hebben op het energieverbruik van de applicatie. Alhoewel de microservice langer gemiddeld een lager energieverbruik heeft per scenario, duurt het langer om dezelfde scenario's uit te voeren dan op de monoliet, waardoor een groter totaal verbruik is. Dit komt doordat de microservice applicatie afhankelijk is van de API responstijd, terwijl de monoliet applicatie een inkomende web request direct kan verwerken zonder afhankelijk te zijn van een externe service. Dit onderzoek duidt verder aan dat een microservice architectuur niet de beste optie is om het energieverbruik van een applicatie te verminderen. Deze bevindingen zijn relevant voor ontwikkelaars en bedrijven die op zoek zijn naar een manier om  het energieverbruik bij hun softwareontwikkeling te verminderen.\\
+
+In toekomstige onderzoeken zou men verder kunnen ingegaan op andere software ontwikkelarchitecturen zoals de serverless of event driven architectuur. Door de impact op energieverbruik van deze andere ontwikkelarchitecturen te onderzoeken, kan een beter beeld gevormd worden in hoe softwareontwikkelaars en bedrijven hun systemen kunnen optimaliseren voor zowel prestaties als duurzaamheid. Deze bevindingen kunnen bijdragen aan meer geïnformeerde beslissingen over architecturale keuzes en hun implicaties voor energieverbruik.

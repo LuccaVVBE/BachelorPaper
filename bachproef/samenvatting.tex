@@ -44,12 +44,16 @@
 % De samenvatting in de hoofdtaal van het document
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
-Deze bachelorproef onderzoekt het energie verbruik van verschillende softwarearchitecturen voor eenzelfde applicatie. Het doel van dit onderzoek is om inzicht te krijgen in welke architectuur het meest geschikt is voor het verminderen van energieverbruik, wat kan leiden tot kostenbesparingen en een positieve impact op het milieu.\\
+Dit onderzoek richtte zich op het analyseren van de impact van architecturale veranderingen op het energieverbruik van een applicatie. De centrale onderzoeksvraag was: "Wat is de impact op energieverbruik bij een architecturale verandering van een applicatie?".\\
 
-Het onderzoek is uitgevoerd door de combinatie van een grondige literatuurstudie, het opstellen van een shortlist van relevante architectuur- en meetmethoden, het ontwikkelen van een Proof of Concept (PoC), het uitvoeren van gestructureerde tests op de PoC, en ten slotte de analyse van de testresultaten.\\
+Om deze vraag te beantwoorden, werd een Proof of Concept (PoC) applicatie ontwikkeld in zowel een monolithische als een microservice versie. Beide versies werden gehost in een docker omgeving op een Ubuntu systeem en ondergingen diverse scenario's om het energieverbruik te meten. Specifieke methoden en controllers werden geïmplementeerd om gebruikers te laten inloggen en het verbruik van telefoonnummers te raadplegen, waardoor zowel resource-intensieve als niet resource-intensieve scenario’s werden gesimuleerd.\\
 
-De resultaten tonen aan dat <In te vullen als resultaten bekend zijn>.\\
-%de microservices-architectuur over het algemeen energie-efficiënter is dan de monolietarchitectuur voor het klantenportaal van Davo Group. Deze bevindingen zijn relevant voor het werkveld omdat ze aangeven welke architectuur het meest geschikt is voor het verminderen van energieverbruik in gelijkaardige toepassingen. Het onderzoek biedt waardevolle inzichten voor Davo Group en draagt bij aan een groter begrip van energie-efficiëntie in softwareontwikkeling.
+De testresultaten toonden aan dat de microservices aanzienlijk meer energie verbruiken dan monolithische applicaties, met een verschil van ongeveer 75\%. Dit verschil is evenredig aan de langere tijd die nodig is voor het uitvoeren van de scenario’s bij de microservices. Ondanks het hogere totale energieverbruik, hadden de microservices een lager gemiddeld wattverbruik vergeleken met de monolithische applicaties. Bovendien vertoonden monolithische applicaties grotere spreiding en variabiliteit in hun energieverbruik, wat wijst op inconsistente prestaties.\\
 
-De conclusie van dit onderzoek is <In te vullen als conclusie gevormd is>.
-%kunnen worden gebruikt om toekomstige beslissingen te informeren over de architectuur van het klantenportaal van Davo Group, en bieden tevens suggesties voor verder onderzoek en mogelijke verbeteringen in energie-efficiëntie in softwareontwikkeling.
+De analyse liet verder zien dat bij lage belasting het verschil in energieverbruik minimaal is, maar bij hoge belasting verbruiken microservices aanzienlijk meer tijd en dus ook meer energie, ondanks hun lagere gemiddelde wattverbruik. Dit kan verklaard worden door de afhankelijkheid van de microservices aan API-responstijden, terwijl monolithische applicaties direct kunnen reageren op inkomende verzoeken.\\
+
+Hoewel deze bevindingen relevant zijn voor ontwikkelaars en bedrijven die streven naar een vermindering van energieverbruik bij softwareontwikkeling, zijn er enkele belangrijke opmerkingen. Het onderzoek bevestigde dat een microservice architectuur op het gebied van energie besparen niet altijd de beste optie is, alhoewel ze een lager gemiddeld wattverbruik aanhouden.\\
+
+Toekomstig onderzoek zou zich kunnen richten op andere software ontwikkelarchitecturen, zoals serverless of event-driven architecturen, om een beter inzicht te krijgen in hoe verschillende architecturen het energieverbruik beïnvloeden. Dit zou kunnen bijdragen aan beter geïnformeerde beslissingen over architecturale keuzes en hun implicaties voor energieverbruik.\\
+
+Deze studie biedt waardevolle inzichten en draagt bij aan het vakgebied door de impact van architecturale keuzes op energieverbruik te belichten, wat belangrijk is voor de ontwikkeling van duurzame softwareoplossingen.
