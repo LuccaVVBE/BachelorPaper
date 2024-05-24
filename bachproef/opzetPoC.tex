@@ -2,7 +2,7 @@
 \chapter{Opzet Proof of Concept}
 \label{ch:opzet-poc}
 \section{Uit te werken scenario}\label{poc-scenario}
-Het uit te werken scenario omvat vooral de hoofdfunctionaliteit van het Davo Group hun klantenportaal. Een gebruiker zal moeten kunnen inloggen en het verbruik van een telefoonnummer raadplegen. De data omvat het verbruik van mobiele telefoonnummers, zijnde datatype (sms, gesprek, bericht) en de hoeveelheid daarvan. In het verbruiksoverzicht zal het totale verbruik berekend worden, wat er voor zorgt dat er een resource intensieve functie aanwezig is. Zoals vermeld in hoofdstuk \ref{sota-title-architecturen} is de invloed van zo een functie op de volledige applicatie verschillend per architectuur. Zo is bijvoorbeeld bij de microservice architectuur enkel de service waar die resource intensieve functie uitgevoerd wordt vertraagd terwijl de andere services hier geen of weinig hinder van ondervinden. 
+Het uit te werken scenario omvat vooral de hoofdfunctionaliteit van het Davo Group hun klantenportaal. Een gebruiker zal moeten kunnen inloggen en het verbruik van een telefoonnummer raadplegen. De data omvat het verbruik van mobiele telefoonnummers, zijnde datatype (sms, gesprek, bericht) en de hoeveelheid daarvan. In het verbruiksoverzicht zal het totale verbruik berekend worden, wat er voor zorgt dat er een resource intensieve functie aanwezig is. Zoals vermeldt in hoofdstuk \ref{sota-title-architecturen} is de invloed van zo een functie op de volledige applicatie verschillend per architectuur. Zo is bijvoorbeeld bij de microservice architectuur enkel de service waar die resource intensieve functie uitgevoerd wordt vertraagd terwijl de andere services hier geen of weinig hinder van ondervinden. 
 
 \section{Bouwen applicatie}
 \subsection{Ontwikkelomgeving}\label{poc-ontwikkelomgeving}
@@ -34,7 +34,7 @@ Voor de telefoonnummer entiteit wordt enkel een overzicht opgehaald van telefoon
 
 
 \subsubsection{Call Log}
-Als laatste blijft de Call Log over. De controller is verantwoordelijk voor het tonen van het verbruik van 1 telefoonnummer. Dit doet hij door via de model alle gelinkte logs op te vragen en vervolgens via een functie het verbruik te berekenen per groep, zijnde gesprek, sms en data. Door het overlopen van grote aantallen logs kan dit snel een resource intensieve methode worden. In het geval van deze proof of concept is dit gemiddeld 2500 logs per telefoonnummer, zoals eerder vermeld in hoofdstuk \ref{oPOC_AC}. De uitgewerkte controller en model zijn beschikbaar in bijlage \ref{bij_con_calllog} en \ref{bij_model_calllog}.\\
+Als laatste blijft de Call Log over. De controller is verantwoordelijk voor het tonen van het verbruik van 1 telefoonnummer. Dit doet hij door via de model alle gelinkte logs op te vragen en vervolgens via een functie het verbruik te berekenen per groep, zijnde gesprek, sms en data. Door het overlopen van grote aantallen logs kan dit snel een resource intensieve methode worden. In het geval van deze proof of concept is dit gemiddeld 2500 logs per telefoonnummer, zoals eerder vermeldt in hoofdstuk \ref{oPOC_AC}. De uitgewerkte controller en model zijn beschikbaar in bijlage \ref{bij_con_calllog} en \ref{bij_model_calllog}.\\
 
 
 \subsection{Monoliet}
@@ -47,7 +47,7 @@ De opbouw van de monoliet applicatie is vrij eenvoudig voor een doorsnee ontwikk
 \end{figure}
 
 \subsection{Microservice}
-Een microservice applicatie zit net iets anders in elkaar dan een monoliet. Aangezien elke service zijn eigen 'applicatie' is, kan je stellen dat er meerdere 'monolieten' zijn die samenwerken om in zijn geheel als microservices te werken. Aangezien het meerdere applicaties zijn, is er ook nood aan een API, die niet nodig is bij de monoliet applicatie. Verder wordt de frontend afgehandeld met het BFF, backend for frontend, patroon. Dit design pattern zorgt ervoor dat eerst alle data van de backend, zijnde van de verschillende API's die gelinkt zijn aan hun eigen microservice, opgehaald zijn om dan te tonen op de webpagina. \\
+Een microservice applicatie zit net iets anders in elkaar dan een monoliet. Aangezien elke service zijn eigen 'applicatie' is, kan je stellen dat er meerdere 'monolieten' zijn die samenwerken om in zijn geheel als microservices te werken. En net omdat er meerdere applicaties zijn, is er ook nood aan een API, die niet nodig is bij de monoliet applicatie. Verder wordt de frontend afgehandeld met het BFF, backend for frontend, patroon. Dit design pattern zorgt ervoor dat eerst alle data van de backend, zijnde van de verschillende API's die gelinkt zijn aan hun eigen microservice, opgehaald is om dan te tonen op de webpagina. \\
 
 De verschillende microservices worden voorgesteld in figuur \ref{multiple_microservices}. Er zijn 3 services die voor elke entiteit zijn functionaliteit afhandelen en één service die het BFF patroon uitvoert. De structuur van een service die een entiteit afhandelt wordt voorgesteld in figuur \ref{microservice_layout}. Hier valt op dat er een API controller is bijgekomen. Dit komt omdat elke microservice nu zijn data beschikbaar moet stellen via API, zodanig de service die de frontend toont alle data kan ophalen. De code van zo een API controller wordt voorgesteld in bijlage \ref{bij_api_con_call_log}. Hierin is het verschil tussen een gewone controller, zoals uit de monoliet applicatie, dat de data niet aan een view gegeven wordt maar als JSON wordt teruggegeven.\\
 
@@ -80,6 +80,6 @@ De relevante hardware configuratie van de machine bestaat als volgt:
 \begin{itemize}
     \item Aorus B450 moederbord;
     \item AMD Ryzen 7 5900 CPU;
-    \item 16GB DDR4 3200Mhz RAM;
+    \item 48GB DDR4 3200Mhz RAM;
     \item Gigabyte RTX 2070 OC 8GB GPU.
 \end{itemize}
